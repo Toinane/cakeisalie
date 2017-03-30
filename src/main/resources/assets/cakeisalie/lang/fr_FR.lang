@@ -1,0 +1,109 @@
+/**
+ * @version 4.04
+ * @author Toinane.
+ *
+ * Custom name for : CakeIsALie mod.
+ */
+ 
+tile.Chocolate_cake.name=Gâteau au chocolat
+tile.Apple_cake.name=Gâteau aux pommes
+tile.Gold_cake.name=Gâteau aux pommes d'Or
+tile.Trapped_cake.name=Gâteau piégé
+tile.Poisoned_cake.name=Gâteau empoisonné
+tile.Lava_cake.name=Gâteau de lave
+tile.Basque_cake.name=Gâteau Basque
+tile.Redstone_cake.name=Gâteau à la redstone
+tile.Brownie.name=Brownie
+tile.Chocolate_mousse.name=Mousse au chocolat
+tile.Cookies_cake.name=Gâteau aux cookies
+tile.Ender_cake.name=Gâteau de l'End
+tile.Pumpkin_cake.name=Gâteau à la citrouille
+tile.Spiced_cake.name=Gâteau épicé
+tile.Sandy_cake.name=Le p'tit Sablé
+tile.Stars_cake.name=Gâteau d'étoiles
+tile.Water-melon_cake.name=Gâteau à la pastèque
+tile.Nordic_cake.name=Gâteau nordique
+tile.Anniversary_cake.name=Gâteau d'anniversaire
+tile.Paris_brest.name=Paris-Brest
+tile.Meat_cake.name=Gâteau à la viande
+tile.Cheese_cake.name=Gâteau au fromage
+tile.Chocolate_roll.name=Roulé au chocolat
+tile.Carrot_cake.name=Gâteau à la carotte
+tile.Slime_cake.name=Gâteau de slime
+
+item.Chocolate_cake.name=Gâteau au chocolat
+item.Apple_cake.name=Gâteau aux pommes
+item.Gold_cake.name=Gâteau aux pommes d'Or
+item.Trapped_cake.name=Gâteau piégé
+item.Poisoned_cake.name=Gâteau empoisonné
+item.Lava_cake.name=Gâteau de lave
+item.Basque_cake.name=Gâteau Basque
+item.Redstone_cake.name=Gâteau à la redstone
+item.Brownie.name=Brownie
+item.Chocolate_mousse.name=Mousse au chocolat
+item.Cookies_cake.name=Gâteau aux cookies
+item.Ender_cake.name=Gâteau de l'End
+item.Pumpkin_cake.name=Gâteau à la citrouille
+item.Spiced_cake.name=Gâteau épicé
+item.Sandy_cake.name=Le p'tit Sablé
+item.Stars_cake.name=Gâteau d'étoiles
+item.Water-melon_cake.name=Gâteau à la pastèque
+item.Nordic_cake.name=Gâteau nordique
+item.Anniversary_cake.name=Gâteau d'anniversaire
+item.Paris_brest.name=Paris-Brest
+item.Meat_cake.name=Gâteau à la viande
+item.Cheese_cake.name=Gâteau au fromage
+item.Chocolate_roll.name=Roulé au chocolat
+item.Carrot_cake.name=Gâteau à la carotte
+item.Slime_cake.name=Gâteau de slime
+item.unknow=Inconnu
+
+item.Hunger_potion.name=Potion de faim
+item.Sandy_potion.name=Potion de sable
+item.Nordic_potion.name=Potion Nordique
+item.Creep_potion.name=Potion Kamikaze
+
+potion.Sandy_potion=Etouffement
+potion.Nordic_potion=givré
+potion.Creep_potion=Kamikaze !
+
+itemGroup.cakeTab=CakeIsALie
+
+achievement.First=Gâteau au chocolat
+achievement.First.desc=Le premier d'une longue liste
+achievement.Creep=Creeper paradox
+achievement.Creep.desc=Explose un creeper comme un creeper !
+achievement.Poisonous=La face cachée des gâteaux
+achievement.Poisonous.desc=Devient méchant
+achievement.Trapped=Piège ton entourage
+achievement.Trapped.desc=Fais un gâteau piégé
+achievement.Death=Surprise !
+achievement.Death.desc=Le gâteau est un mensonge. vraiment.
+achievement.Anniv=La puissance du creeper
+achievement.Anniv.desc=Ce n'est pas vraiment un gâteau..
+achievement.Apple=Gâteau aux pommes
+achievement.Apple.desc=Fais un gâteau aux pommes
+achievement.Watermelon=Gâteau à la pastèque
+achievement.Watermelon.desc=Graines de pastèque certifiées !
+achievement.AppleGold=Gâteau aux pommes dorée
+achievement.AppleGold.desc=Fais un gâteau aux pommes dorée
+achievement.Pumpkin=Gâteau à la citrouille
+achievement.Pumpkin.desc=Fais un gâteau à la citrouille
+achievement.Spiced=Gâteau épicé
+achievement.Spiced.desc=Fais un gâteau épicé
+achievement.Stars=Gâteau d'XP ?
+achievement.Stars.desc=Fais un gâteau d'étoiles
+achievement.Redstone=Gâteau de... redstone
+achievement.Redstone.desc=Obtiens la puissance de la redstone !
+achievement.Lava=Gâteau de lave
+achievement.Lava.desc=La lave deviendra de l'eau maintenant
+achievement.Nordic=Gâteau nordique
+achievement.Nordic.desc=Fais le gâteau glacé
+achievement.WaterIced=Devient comme la glace
+achievement.WaterIced.desc=Cours une longue distance sur l'eau
+achievement.Roll=Roulé au chocolat
+achievement.Roll.desc=Rock 'n' Roll!
+achievement.Sandy=le p'tit sablé
+achievement.Sandy.desc=Fais un p'tit sablé
+achievement.Suffocation=Cracher du sable
+achievement.Suffocation.desc=Crache du sable durant un long moment

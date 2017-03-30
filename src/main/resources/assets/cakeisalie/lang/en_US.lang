@@ -1,0 +1,109 @@
+/**
+ * @version 4.04
+ * @author Toinane.
+ *
+ * Custom name for : CakeIsALie mod.
+ */
+ 
+tile.Chocolate_cake.name=Chocolate Cake
+tile.Apple_cake.name=Apple Cake
+tile.Gold_cake.name=Apple Gold Cake
+tile.Trapped_cake.name=Trapped Cake
+tile.Poisoned_cake.name=Poisoned Cake
+tile.Lava_cake.name=Lava Cake
+tile.Basque_cake.name=Basque Cake
+tile.Redstone_cake.name=Redstone Cake
+tile.Brownie.name=Brownie
+tile.Chocolate_mousse.name=Chocolate Mousse
+tile.Cookies_cake.name=Cookies Cake
+tile.Ender_cake.name=Ender Cake
+tile.Pumpkin_cake.name=Pumpkin Cake
+tile.Spiced_cake.name=Spiced Cake
+tile.Sandy_cake.name=Sandy Cake
+tile.Stars_cake.name=Stars Cake
+tile.Water-melon_cake.name=Water-melon Cake
+tile.Nordic_cake.name=Nordic Cake
+tile.Anniversary_cake.name=Anniversary Cake
+tile.Paris_brest.name=Paris-Brest
+tile.Meat_cake.name=Meat Cake
+tile.Cheese_cake.name=Cheese Cake
+tile.Chocolate_roll.name=Chocolate Roll
+tile.Carrot_cake.name=Carrot Cake
+tile.Slime_cake.name=Slimy Cake
+
+item.Chocolate_cake.name=Chocolate Cake
+item.Apple_cake.name=Apple Cake
+item.Gold_cake.name=Apple Gold Cake
+item.Trapped_cake.name=Trapped Cake
+item.Poisoned_cake.name=Poisoned Cake
+item.Lava_cake.name=Lava Cake
+item.Basque_cake.name=Basque Cake
+item.Redstone_cake.name=Redstone Cake
+item.Brownie.name=Brownie
+item.Chocolate_mousse.name=Chocolate Mousse
+item.Cookies_cake.name=Cookies Cake
+item.Ender_cake.name=Ender Cake
+item.Pumpkin_cake.name=Pumpkin Cake
+item.Spiced_cake.name=Spiced Cake
+item.Sandy_cake.name=Sandy Cake
+item.Stars_cake.name=Stars Cake
+item.Water-melon_cake.name=Water-melon Cake
+item.Nordic_cake.name=Nordic Cake
+item.Anniversary_cake.name=Anniversary Cake
+item.Paris_brest.name=Paris-Brest
+item.Meat_cake.name=Meat Cake
+item.Cheese_cake.name=Cheese Cake
+item.Chocolate_roll.name=Chocolate Roll
+item.Carrot_cake.name=Carrot Cake
+item.Slime_cake.name=Slimy Cake
+item.Unknow.name=Unknow
+
+item.Hunger_potion.name=Potion of Hunger
+item.Sandy_potion.name=Potion of Sand
+item.Nordic_potion.name=Nordic Potion
+item.Creep_potion.name=Kamikaze Potion
+
+potion.Sandy_potion=Suffocation
+potion.Nordic_potion=Frosted
+potion.Creep_potion=Kamikaze!
+
+itemGroup.cakeTab=CakeIsALie
+
+achievement.First=Chocolate Cake
+achievement.First.desc=The first of a long list
+achievement.Creep=Creeper Paradox
+achievement.Creep.desc=Explode a Creeper like a Creeper!
+achievement.Poisonous=Evil Face of Cakes
+achievement.Poisonous.desc=Become an evil
+achievement.Trapped=Trap People Around You
+achievement.Trapped.desc=Craft a Trapped Cake
+achievement.Death=Trapped!
+achievement.Death.desc=The cake is a lie. Really.
+achievement.Anniv=Creeper's Power
+achievement.Anniv.desc=It's not a real cake..
+achievement.Apple=Apple Cake
+achievement.Apple.desc=Craft an Apple Cake
+achievement.Watermelon=Watermelon Cake
+achievement.Watermelon.desc=Watermelon's seed certified!
+achievement.AppleGold=Gold Apple Cake
+achievement.AppleGold.desc=Craft a Gold Apple Cake
+achievement.Pumpkin=Pumpkin Cake
+achievement.Pumpkin.desc=Craft a Pumpkin Cake
+achievement.Spiced=Spiced Cake
+achievement.Spiced.desc=Craft a Spiced Cake
+achievement.Stars=XP Cake?
+achievement.Stars.desc=Craft a Stars Cake
+achievement.Redstone=Redstone.. Cake
+achievement.Redstone.desc=Get the power of Redstone!
+achievement.Lava=Lava Cake
+achievement.Lava.desc=The lava will be like water now
+achievement.Nordic=Nordic Cake
+achievement.Nordic.desc=Craft the frozen Cake
+achievement.WaterIced=Be Like Ice
+achievement.WaterIced.desc=Run a long distance on water
+achievement.Roll=Chocolate Roll
+achievement.Roll.desc=Rock 'n' Roll!
+achievement.Sandy=The Little Sandy
+achievement.Sandy.desc=Craft a Sandy Cake
+achievement.Suffocation=Belch Out Sand
+achievement.Suffocation.desc=Belch out sand a long moment
