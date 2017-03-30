@@ -1,4 +1,4 @@
-# cakeisalie
+# CakeIsALie Mod v4.05 - MC 1.7.10
 CakeIsALie Mod - Minecraft
 
 Builds and crafts on website => https://crea-th.at/p/cakeisalie/
