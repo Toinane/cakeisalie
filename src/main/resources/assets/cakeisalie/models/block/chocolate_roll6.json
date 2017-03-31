@@ -1,0 +1,23 @@
+{
+	"forge_marker": 1,
+	"textures": {
+        "particle": "cakeisalie:blocks/chocolate_roll_side",
+		  "bothside": "cakeisalie:blocks/chocolate_roll_bothside",
+        "side": "cakeisalie:blocks/chocolate_roll_side",
+        "top": "cakeisalie:blocks/chocolate_roll_top"
+    },
+	 "elements": [
+        {
+				"from": [ 13, 0, 4 ],
+		  		"to": [ 15, 7, 12 ],
+            "faces": {
+					"north": { "texture": "#bothside" },
+					"east": { "texture": "#side" },
+					"south": { "texture": "#bothside" },
+					"west": { "texture": "#side" },
+					"up": { "texture": "#top" },
+					"down": { "texture": "#top", "cullface": "down" }
+            }
+        }
+	]
+}
