@@ -1,10 +1,10 @@
 /**
- * @version 4.04
+ * @version 5.1.1
  * @author Toinane.
  *
  * Custom name for : CakeIsALie mod.
  */
- 
+
 tile.Chocolate_cake.name=Gâteau au chocolat
 tile.Apple_cake.name=Gâteau aux pommes
 tile.Gold_cake.name=Gâteau aux pommes d'Or
@@ -25,11 +25,12 @@ tile.Water-melon_cake.name=Gâteau à la pastèque
 tile.Nordic_cake.name=Gâteau nordique
 tile.Anniversary_cake.name=Gâteau d'anniversaire
 tile.Paris_brest.name=Paris-Brest
-tile.Meat_cake.name=Gâteau à la viande
-tile.Cheese_cake.name=Gâteau au fromage
+tile.Hamburger.name=Hamburger
+tile.Cheese_cake.name=Cheese Cake
 tile.Chocolate_roll.name=Roulé au chocolat
 tile.Carrot_cake.name=Gâteau à la carotte
-tile.Slime_cake.name=Gâteau de slime
+tile.Slime_cake.name=Gâteau gluant
+tile.Muffins.name=Muffins
 
 item.Chocolate_cake.name=Gâteau au chocolat
 item.Apple_cake.name=Gâteau aux pommes
@@ -51,21 +52,29 @@ item.Water-melon_cake.name=Gâteau à la pastèque
 item.Nordic_cake.name=Gâteau nordique
 item.Anniversary_cake.name=Gâteau d'anniversaire
 item.Paris_brest.name=Paris-Brest
-item.Meat_cake.name=Gâteau à la viande
-item.Cheese_cake.name=Gâteau au fromage
+item.Hamburger.name=Hamburger
+item.Cheese_cake.name=Cheese Cake
 item.Chocolate_roll.name=Roulé au chocolat
 item.Carrot_cake.name=Gâteau à la carotte
-item.Slime_cake.name=Gâteau de slime
+item.Slime_cake.name=Gâteau gluant
+item.Muffins.name=Muffins
 item.unknow=Inconnu
 
 item.Hunger_potion.name=Potion de faim
 item.Sandy_potion.name=Potion de sable
 item.Nordic_potion.name=Potion Nordique
 item.Creep_potion.name=Potion Kamikaze
+item.Slime_potion.name=Potion de Slime
+item.Hunger_splash_potion=Splash Potion de faim
+item.Sandy_splash_potion.name=Splash Potion de sable
+item.Nordic_splash_potion.name=Splash Potion Nordique
+item.Creep_splash_potion.name=Splash Potion Kamikaze
+item.Slime_splash_potion.name=Splash Potion de Slime
 
 potion.Sandy_potion=Etouffement
 potion.Nordic_potion=givré
 potion.Creep_potion=Kamikaze !
+potion.Slime_potion=Rebondissement !
 
 itemGroup.cakeTab=CakeIsALie
 

@@ -1,4 +1,4 @@
-//   Ce mod est crï¿½ï¿½ par Toinane. Merci de ne pas copier tout mon travail =)   [Franï¿½ais]
+//   Ce mod est créé par Toinane. Merci de ne pas copier tout mon travail =)   [Français]
 //   Made by Toinane. Thank you not to copy all my work (:                     [English]
 //
 //   #############    ##########    ###    ###    ##        #####       ###    ##   ##########
@@ -16,134 +16,147 @@ import java.lang.reflect.Modifier;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemReed;
+//import net.minecraft.item.ItemReed;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionHelper;
 import net.minecraft.stats.Achievement;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.common.config.Configuration;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.eventhandler.Event;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.Event;
+import net.minecraftforge.fml.common.registry.LanguageRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+
 
 
 @Mod(modid = CakeIsALie.MODID, name = CakeIsALie.MODNAME, version = CakeIsALie.VERSION)
 public class CakeIsALie
 {
-    public static final String MODID = "CakeIsALie";
+    public static final String MODID = "cakeisalie";
     public static final String MODNAME = "CakeIsALie";
-    public static final String VERSION = "4.05";
-
+    public static final String VERSION = "5.1.1";
+    public static final int NBRCAKE = 26;
+ 
     @Mod.Instance(CakeIsALie.MODID)
     public static CakeIsALie instance;
-
+    
     @SidedProxy(clientSide = "com.toinane.cakeisalie.ClientProxy", serverSide = "com.toinane.cakeisalie.ServerProxy")
 	public static ServerProxy proxy;
-
+    
     public static CakeTab cakeTab = new CakeTab("cakeTab");
-
-	public static Block cake1 = new BlockMultipleCake(1).setBlockName("Chocolate_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake2 = new BlockMultipleCake(2).setBlockName("Apple_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake3 = new BlockMultipleCake(3).setBlockName("Gold_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake4 = new BlockMultipleCake(4).setBlockName("Trapped_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake5 = new BlockMultipleCake(5).setBlockName("Poisoned_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake6 = new BlockMultipleCake(6).setBlockName("Lava_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake7 = new BlockMultipleCake(7).setBlockName("Basque_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake8 = new BlockMultipleCake(8).setBlockName("Redstone_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake9 = new BlockMultipleCake(9).setBlockName("Brownie").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake10 = new BlockMultipleCake(10).setBlockName("Chocolate_mousse").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake11 = new BlockMultipleCake(11).setBlockName("Cookies_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake12 = new BlockMultipleCake(12).setBlockName("Ender_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake13 = new BlockMultipleCake(13).setBlockName("Pumpkin_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake14 = new BlockMultipleCake(14).setBlockName("Spiced_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake15 = new BlockMultipleCake(15).setBlockName("Sandy_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake16 = new BlockMultipleCake(16).setBlockName("Stars_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake17 = new BlockMultipleCake(17).setBlockName("Water-melon_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake18 = new BlockMultipleCake(18).setBlockName("Nordic_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake19 = new BlockAnniversary().setBlockName("Anniversary_cake").setLightLevel(0.8F).setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake19w = new BlockMultipleCake(19).setBlockName("Anniversary_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake20 = new BlockParisBrest(1).setBlockName("Paris_brest").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake20w = new BlockParisBrest(2).setBlockName("Paris_brest").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake20s = new BlockParisBrest(3).setBlockName("Paris_brest").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake21 = new BlockMultipleCake(21).setBlockName("Meat_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake22 = new BlockMultipleCake(22).setBlockName("Cheese_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake23 = new BlockMultipleCake(23).setBlockName("Chocolate_roll").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake24 = new BlockMultipleCake(24).setBlockName("Carrot_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-	public static Block cake25 = new BlockMultipleCake(25).setBlockName("Slime_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
-
-	public static Item icake1 = new ItemReed(cake1).setUnlocalizedName("Chocolate_cake").setTextureName(MODID+":chocolate_cake").setCreativeTab(cakeTab);
-	public static Item icake2 = new ItemReed(cake2).setUnlocalizedName("Apple_cake").setTextureName(MODID+":apple_cake").setCreativeTab(cakeTab);
-	public static Item icake3 = new ItemReed(cake3).setUnlocalizedName("Gold_cake").setTextureName(MODID+":gold_cake").setCreativeTab(cakeTab);
-	public static Item icake4 = new ItemReed(cake4).setUnlocalizedName("Trapped_cake").setTextureName(MODID+":normal_cake").setCreativeTab(cakeTab);
-	public static Item icake5 = new ItemReed(cake5).setUnlocalizedName("Poisoned_cake").setTextureName(MODID+":normal_cake").setCreativeTab(cakeTab);
-	public static Item icake6 = new ItemReed(cake6).setUnlocalizedName("Lava_cake").setTextureName(MODID+":lava_cake").setCreativeTab(cakeTab);
-	public static Item icake7 = new ItemReed(cake7).setUnlocalizedName("Basque_cake").setTextureName(MODID+":basque_cake").setCreativeTab(cakeTab);
-	public static Item icake8 = new ItemReed(cake8).setUnlocalizedName("Redstone_cake").setTextureName(MODID+":redstone_cake").setCreativeTab(cakeTab);
-	public static Item icake9 = new ItemReed(cake9).setUnlocalizedName("Brownie").setTextureName(MODID+":brownie").setCreativeTab(cakeTab);
-	public static Item icake10 = new ItemReed(cake10).setUnlocalizedName("Chocolate_mousse").setTextureName(MODID+":chocolate_mousse").setCreativeTab(cakeTab);
-	public static Item icake11 = new ItemReed(cake11).setUnlocalizedName("Cookies_cake").setTextureName(MODID+":cookies_cake").setCreativeTab(cakeTab);
-	public static Item icake12 = new ItemReed(cake12).setUnlocalizedName("Ender_cake").setTextureName(MODID+":ender_cake").setCreativeTab(cakeTab);
-	public static Item icake13 = new ItemReed(cake13).setUnlocalizedName("Pumpkin_cake").setTextureName(MODID+":pumpkin_cake").setCreativeTab(cakeTab);
-	public static Item icake14 = new ItemReed(cake14).setUnlocalizedName("Spiced_cake").setTextureName(MODID+":spiced_cake").setCreativeTab(cakeTab);
-	public static Item icake15 = new ItemReed(cake15).setUnlocalizedName("Sandy_cake").setTextureName(MODID+":sandy_cake").setCreativeTab(cakeTab);
-	public static Item icake16 = new ItemReed(cake16).setUnlocalizedName("Stars_cake").setTextureName(MODID+":stars_cake").setCreativeTab(cakeTab);
-	public static Item icake17 = new ItemReed(cake17).setUnlocalizedName("Water-melon_cake").setTextureName(MODID+":water-melon_cake").setCreativeTab(cakeTab);
-	public static Item icake18 = new ItemReed(cake18).setUnlocalizedName("Nordic_cake").setTextureName(MODID+":nordic_cake").setCreativeTab(cakeTab);
-	public static Item icake19 = new ItemReed(cake19).setUnlocalizedName("Anniversary_cake").setTextureName(MODID+":anniversary_cake").setCreativeTab(cakeTab);
-	public static Item icake20 = new ItemReed(cake20).setUnlocalizedName("Paris_brest").setTextureName(MODID+":paris_brest").setCreativeTab(cakeTab);
-	public static Item icake21 = new ItemReed(cake21).setUnlocalizedName("Meat_cake").setTextureName(MODID+":meat_cake").setCreativeTab(cakeTab);
-	public static Item icake22 = new ItemReed(cake22).setUnlocalizedName("Cheese_cake").setTextureName(MODID+":cheese_cake").setCreativeTab(cakeTab);
-	public static Item icake23 = new ItemReed(cake23).setUnlocalizedName("Chocolate_roll").setTextureName(MODID+":chocolate_roll").setCreativeTab(cakeTab);
-	public static Item icake24 = new ItemReed(cake24).setUnlocalizedName("Carrot_cake").setTextureName(MODID+":carrot_cake").setCreativeTab(cakeTab);
-	public static Item icake25 = new ItemReed(cake25).setUnlocalizedName("Slime_cake").setTextureName(MODID+":slime_cake").setCreativeTab(cakeTab);
-	public static Item hunger = new ItemCakePotion(1).setUnlocalizedName("Hunger_potion").setTextureName(MODID+":hunger").setCreativeTab(cakeTab);
-	public static Item sandy = new ItemCakePotion(2).setUnlocalizedName("Sandy_potion").setTextureName(MODID+":sandy").setCreativeTab(cakeTab);
-	public static Item nordic = new ItemCakePotion(3).setUnlocalizedName("Nordic_potion").setTextureName(MODID+":nordic").setCreativeTab(cakeTab);
-	public static Item creep = new ItemCakePotion(4).setUnlocalizedName("Creep_potion").setTextureName(MODID+":creep").setCreativeTab(cakeTab);
-
+	
+	public static Block chocolate_cake = new BlockMultipleCake("chocolate_cake").setUnlocalizedName("Chocolate_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block apple_cake = new BlockMultipleCake("apple_cake").setUnlocalizedName("Apple_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block gold_cake = new BlockMultipleCake("gold_cake").setUnlocalizedName("Gold_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block trapped_cake = new BlockMultipleCake("trapped_cake").setUnlocalizedName("Trapped_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block poisoned_cake = new BlockMultipleCake("poisoned_cake").setUnlocalizedName("Poisoned_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block lava_cake = new BlockMultipleCake("lava_cake").setUnlocalizedName("Lava_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block basque_cake = new BlockMultipleCake("basque_cake").setUnlocalizedName("Basque_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block redstone_cake = new BlockMultipleCake("redstone_cake").setUnlocalizedName("Redstone_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block brownie = new BlockMultipleCake("brownie").setUnlocalizedName("Brownie").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block chocolate_mousse = new BlockMultipleCake("chocolate_mousse").setUnlocalizedName("Chocolate_mousse").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block cookies_cake = new BlockMultipleCake("cookies_cake").setUnlocalizedName("Cookies_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block ender_cake = new BlockMultipleCake("ender_cake").setUnlocalizedName("Ender_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block pumpkin_cake = new BlockMultipleCake("pumpkin_cake").setUnlocalizedName("Pumpkin_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block spiced_cake = new BlockMultipleCake("spiced_cake").setUnlocalizedName("Spiced_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block sandy_cake = new BlockMultipleCake("sandy_cake").setUnlocalizedName("Sandy_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block stars_cake = new BlockMultipleCake("stars_cake").setUnlocalizedName("Stars_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block watermelon_cake = new BlockMultipleCake("watermelon_cake").setUnlocalizedName("Water-melon_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block nordic_cake = new BlockMultipleCake("nordic_cake").setUnlocalizedName("Nordic_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block anniversary_cake = new BlockMultipleCake("anniversary_cake").setUnlocalizedName("Anniversary_cake").setLightLevel(0.8F).setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block paris_brest = new BlockMultipleCake("paris_brest").setUnlocalizedName("Paris_brest").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block hamburger = new BlockMultipleCake("hamburger").setUnlocalizedName("Hamburger").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block cheese_cake = new BlockMultipleCake("cheese_cake").setUnlocalizedName("Cheese_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block chocolate_roll = new BlockMultipleCake("chocolate_roll").setUnlocalizedName("Chocolate_roll").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block carrot_cake = new BlockMultipleCake("carrot_cake").setUnlocalizedName("Carrot_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block slime_cake = new BlockMultipleCake("slime_cake").setUnlocalizedName("Slime_cake").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	public static Block muffins = new BlockMultipleCake("muffins").setUnlocalizedName("Muffins").setStepSound(Block.soundTypeCloth).setHardness(0.5F);
+	
+	public static Item item_chocolate_cake = new ItemMultipleCake(chocolate_cake).setUnlocalizedName("Chocolate_cake").setCreativeTab(cakeTab);
+	public static Item item_apple_cake = new ItemMultipleCake(apple_cake).setUnlocalizedName("Apple_cake").setCreativeTab(cakeTab);
+	public static Item item_gold_cake = new ItemMultipleCake(gold_cake).setUnlocalizedName("Gold_cake").setCreativeTab(cakeTab);
+	public static Item item_trapped_cake = new ItemMultipleCake(trapped_cake).setUnlocalizedName("Trapped_cake").setCreativeTab(cakeTab);
+	public static Item item_poisoned_cake = new ItemMultipleCake(poisoned_cake).setUnlocalizedName("Poisoned_cake").setCreativeTab(cakeTab);
+	public static Item item_lava_cake = new ItemMultipleCake(lava_cake).setUnlocalizedName("Lava_cake").setCreativeTab(cakeTab);
+	public static Item item_basque_cake = new ItemMultipleCake(basque_cake).setUnlocalizedName("Basque_cake").setCreativeTab(cakeTab);
+	public static Item item_redstone_cake = new ItemMultipleCake(redstone_cake).setUnlocalizedName("Redstone_cake").setCreativeTab(cakeTab);
+	public static Item item_brownie = new ItemMultipleCake(brownie).setUnlocalizedName("Brownie").setCreativeTab(cakeTab);
+	public static Item item_chocolate_mousse = new ItemMultipleCake(chocolate_mousse).setUnlocalizedName("Chocolate_mousse").setCreativeTab(cakeTab);
+	public static Item item_cookies_cake = new ItemMultipleCake(cookies_cake).setUnlocalizedName("Cookies_cake").setCreativeTab(cakeTab);
+	public static Item item_ender_cake = new ItemMultipleCake(ender_cake).setUnlocalizedName("Ender_cake").setCreativeTab(cakeTab);
+	public static Item item_pumpkin_cake = new ItemMultipleCake(pumpkin_cake).setUnlocalizedName("Pumpkin_cake").setCreativeTab(cakeTab);
+	public static Item item_spiced_cake = new ItemMultipleCake(spiced_cake).setUnlocalizedName("Spiced_cake").setCreativeTab(cakeTab);
+	public static Item item_sandy_cake = new ItemMultipleCake(sandy_cake).setUnlocalizedName("Sandy_cake").setCreativeTab(cakeTab);
+	public static Item item_stars_cake = new ItemMultipleCake(stars_cake).setUnlocalizedName("Stars_cake").setCreativeTab(cakeTab);
+	public static Item item_watermelon_cake = new ItemMultipleCake(watermelon_cake).setUnlocalizedName("Water-melon_cake").setCreativeTab(cakeTab);
+	public static Item item_nordic_cake = new ItemMultipleCake(nordic_cake).setUnlocalizedName("Nordic_cake").setCreativeTab(cakeTab);
+	public static Item item_anniversary_cake = new ItemMultipleCake(anniversary_cake).setUnlocalizedName("Anniversary_cake").setCreativeTab(cakeTab);
+	public static Item item_paris_brest = new ItemMultipleCake(paris_brest).setUnlocalizedName("Paris_brest").setCreativeTab(cakeTab); 
+	public static Item item_hamburger = new ItemMultipleCake(hamburger).setUnlocalizedName("Hamburger").setCreativeTab(cakeTab);
+	public static Item item_cheese_cake = new ItemMultipleCake(cheese_cake).setUnlocalizedName("Cheese_cake").setCreativeTab(cakeTab);
+	public static Item item_chocolate_roll = new ItemMultipleCake(chocolate_roll).setUnlocalizedName("Chocolate_roll").setCreativeTab(cakeTab);
+	public static Item item_carrot_cake = new ItemMultipleCake(carrot_cake).setUnlocalizedName("Carrot_cake").setCreativeTab(cakeTab);
+	public static Item item_slime_cake = new ItemMultipleCake(slime_cake).setUnlocalizedName("Slime_cake").setCreativeTab(cakeTab);
+	public static Item item_muffins = new ItemMultipleCake(muffins).setUnlocalizedName("Muffins").setCreativeTab(cakeTab);
+	
+	
+	public static Item potion_hunger = new ItemCakePotion("hunger", false).setUnlocalizedName("Hunger_potion").setCreativeTab(cakeTab);
+	public static Item potion_sandy = new ItemCakePotion("sandy", false).setUnlocalizedName("Sandy_potion").setCreativeTab(cakeTab);
+	public static Item potion_nordic = new ItemCakePotion("nordic", false).setUnlocalizedName("Nordic_potion").setCreativeTab(cakeTab);
+	public static Item potion_creep = new ItemCakePotion("creep", false).setUnlocalizedName("Creep_potion").setCreativeTab(cakeTab);
+	public static Item potion_slime = new ItemCakePotion("slime", false).setUnlocalizedName("Slime_potion").setCreativeTab(cakeTab);
+	public static Item splash_hunger = new ItemCakePotion("hunger", true).setUnlocalizedName("Hunger_splash_potion");
+	public static Item splash_sandy = new ItemCakePotion("sandy", true).setUnlocalizedName("Sandy_splash_potion");
+	public static Item splash_nordic = new ItemCakePotion("nordic", true).setUnlocalizedName("Nordic_splash_potion");
+	public static Item splash_creep = new ItemCakePotion("creep", true).setUnlocalizedName("Creep_splash_potion");
+	public static Item splash_slime = new ItemCakePotion("slime", true).setUnlocalizedName("Slime_splash_potion");
+	
 	public static Potion potionSandy;
 	public static Potion potionNordic;
 	public static Potion potionCreep;
-
-	public static Achievement firstCake = new Achievement("cakeisalie.achievement.firstCake", "First", 0, 0, CakeIsALie.icake1, (Achievement)null).registerStat();
-	public static Achievement poisonousCake = new Achievement("cakeisalie.achievement.poisonousCake", "Poisonous", 0, 2, CakeIsALie.icake5, firstCake).registerStat();
-	public static Achievement trappedCake = new Achievement("cakeisalie.achievement.trappedCake", "Trapped", -2, 2, CakeIsALie.icake5, poisonousCake).registerStat();
-	public static Achievement deathCake = new Achievement("cakeisalie.achievement.deathCake", "Death", -4, 2, new ItemStack(Items.skull, 1, 3), trappedCake).setSpecial().registerStat();
-	public static Achievement anniversaryCake = new Achievement("cakeisalie.achievement.anniversaryCake", "Anniv", -2, 4, CakeIsALie.icake19, trappedCake).registerStat();
-	public static Achievement explodeCreep = new Achievement("cakeisalie.achievement.explodeCreep", "Creep", 0, 4, Item.getItemFromBlock(Blocks.tnt), anniversaryCake).setSpecial().registerStat();
-	public static Achievement appleCake = new Achievement("cakeisalie.achievement.appleCake", "Apple", 0, -2, CakeIsALie.icake2, firstCake).registerStat();
-	public static Achievement watermelonCake = new Achievement("cakeisalie.achievement.watermelonCake", "Watermelon", -2, -4, CakeIsALie.icake17, appleCake).registerStat();
-	public static Achievement appleGoldCake = new Achievement("cakeisalie.achievement.appleGoldCake", "AppleGold", -2, -2, CakeIsALie.icake3, appleCake).registerStat();
-	public static Achievement pumpkinCake = new Achievement("cakeisalie.achievement.pumpkinCake", "Pumpkin", -3, 0, CakeIsALie.icake13, appleGoldCake).registerStat();
-	public static Achievement spicedCake = new Achievement("cakeisalie.achievement.spicedCake", "Spiced", -6, 0, CakeIsALie.icake14, pumpkinCake).registerStat();
-	public static Achievement starsCake = new Achievement("cakeisalie.achievement.starsCake", "Stars", -5, -3, CakeIsALie.icake16, pumpkinCake).registerStat();
-	public static Achievement redstoneCake = new Achievement("cakeisalie.achievement.redstoneCake", "Redstone", 2, -1, CakeIsALie.icake8, firstCake).registerStat();
-	public static Achievement lavaCake = new Achievement("cakeisalie.achievement.lavaCake", "Lava", 2, -3, CakeIsALie.icake6, redstoneCake).registerStat();
-	public static Achievement nordicCake = new Achievement("cakeisalie.achievement.nordicCake", "Nordic", 4, -2, CakeIsALie.icake18, redstoneCake).registerStat();
-	public static Achievement waterIced = new Achievement("cakeisalie.achievement.waterIced", "WaterIced", 5, -4, Item.getItemFromBlock(Blocks.ice), nordicCake).setSpecial().registerStat();
-	public static Achievement chocolateRoll = new Achievement("cakeisalie.achievement.chocolateRoll", "Roll", 2, 1, CakeIsALie.icake23, firstCake).registerStat();
-	public static Achievement sandyCake = new Achievement("cakeisalie.achievement.sandyCake", "Sandy", 4, 2, CakeIsALie.icake15, chocolateRoll).registerStat();
-	public static Achievement suffocation = new Achievement("cakeisalie.achievement.suffocation", "Suffocation", 6, 0, Item.getItemFromBlock(Blocks.sand), sandyCake).setSpecial().registerStat();
-
-
-
+	public static Potion potionSlime;
+	
+	public static Achievement firstCake = (Achievement) new Achievement("cakeisalie.achievement.firstCake", "First", 0, 0, CakeIsALie.item_chocolate_cake, (Achievement)null).registerStat();
+	public static Achievement poisonousCake = (Achievement) new Achievement("cakeisalie.achievement.poisonousCake", "Poisonous", 0, 2, CakeIsALie.item_poisoned_cake, firstCake).registerStat();
+	public static Achievement trappedCake = (Achievement) new Achievement("cakeisalie.achievement.trappedCake", "Trapped", -2, 2, CakeIsALie.item_trapped_cake, poisonousCake).registerStat();
+	public static Achievement deathCake = (Achievement) new Achievement("cakeisalie.achievement.deathCake", "Death", -4, 2, new ItemStack(Items.skull, 1, 3), trappedCake).setSpecial().registerStat();
+	public static Achievement anniversaryCake = (Achievement) new Achievement("cakeisalie.achievement.anniversaryCake", "Anniv", -2, 4, CakeIsALie.item_anniversary_cake, trappedCake).registerStat();
+	public static Achievement explodeCreep = (Achievement) new Achievement("cakeisalie.achievement.explodeCreep", "Creep", 0, 4, Item.getItemFromBlock(Blocks.tnt), anniversaryCake).setSpecial().registerStat();
+	public static Achievement appleCake = (Achievement) new Achievement("cakeisalie.achievement.appleCake", "Apple", 0, -2, CakeIsALie.item_apple_cake, firstCake).registerStat();
+	public static Achievement watermelonCake = (Achievement) new Achievement("cakeisalie.achievement.watermelonCake", "Watermelon", -2, -4, CakeIsALie.item_watermelon_cake, appleCake).registerStat();
+	public static Achievement appleGoldCake = (Achievement) new Achievement("cakeisalie.achievement.appleGoldCake", "AppleGold", -2, -2, CakeIsALie.item_gold_cake, appleCake).registerStat();
+	public static Achievement pumpkinCake = (Achievement) new Achievement("cakeisalie.achievement.pumpkinCake", "Pumpkin", -3, 0, CakeIsALie.item_pumpkin_cake, appleGoldCake).registerStat();
+	public static Achievement spicedCake = (Achievement) new Achievement("cakeisalie.achievement.spicedCake", "Spiced", -6, 0, CakeIsALie.item_spiced_cake, pumpkinCake).registerStat();
+	public static Achievement starsCake = (Achievement) new Achievement("cakeisalie.achievement.starsCake", "Stars", -5, -3, CakeIsALie.item_stars_cake, pumpkinCake).registerStat();
+	public static Achievement redstoneCake = (Achievement) new Achievement("cakeisalie.achievement.redstoneCake", "Redstone", 2, -1, CakeIsALie.item_redstone_cake, firstCake).registerStat();
+	public static Achievement lavaCake = (Achievement) new Achievement("cakeisalie.achievement.lavaCake", "Lava", 2, -3, CakeIsALie.item_lava_cake, redstoneCake).registerStat();
+	public static Achievement nordicCake = (Achievement) new Achievement("cakeisalie.achievement.nordicCake", "Nordic", 4, -2, CakeIsALie.item_nordic_cake, redstoneCake).registerStat();
+	public static Achievement waterIced = (Achievement) new Achievement("cakeisalie.achievement.waterIced", "WaterIced", 5, -4, Item.getItemFromBlock(Blocks.ice), nordicCake).setSpecial().registerStat();
+	public static Achievement chocolateRoll = (Achievement) new Achievement("cakeisalie.achievement.chocolateRoll", "Roll", 2, 1, CakeIsALie.item_chocolate_roll, firstCake).registerStat();
+	public static Achievement sandyCake = (Achievement) new Achievement("cakeisalie.achievement.sandyCake", "Sandy", 4, 2, CakeIsALie.item_sandy_cake, chocolateRoll).registerStat();
+	public static Achievement suffocation = (Achievement) new Achievement("cakeisalie.achievement.suffocation", "Suffocation", 6, 0, Item.getItemFromBlock(Blocks.sand), sandyCake).setSpecial().registerStat();
+	
+	
 	@Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent e){
-
-    	System.out.println("CakeIsALie.preInit()"); //output to console.
-
+    public void preInit(FMLPreInitializationEvent event){
+    	
     	// pour les effets de potion
     	Potion[] potionTypes = null;
     	for (Field f : Potion.class.getDeclaredFields()){
@@ -161,180 +174,265 @@ public class CakeIsALie
     			}
     		}
     		catch (Exception r){
-    			System.err.println("Severe error, please report this to the mod author:");
+    			System.err.println("Severe error, please report this to the mod author: Toinane");
     			System.err.println(r);
     		}
     	}
-
-
-    	potionSandy = new PotionCake(72, false, 0).setIconIndex(0, 0).setPotionName("potion.Sandy_potion");
-    	potionNordic = new PotionCake(73, false, 0).setIconIndex(1, 0).setPotionName("potion.Nordic_potion");
-    	potionCreep = new PotionCake(74, false, 0).setIconIndex(2, 0).setPotionName("potion.Creep_potion");
-
+    	
+    	
+		potionSandy = new PotionCake(new ResourceLocation("sandy_potion"), false, 0).setIconIndex(0, 0).setPotionName("potion.Sandy_potion");
+    	potionNordic = new PotionCake(new ResourceLocation("nordic_potion"), false, 0).setIconIndex(1, 0).setPotionName("potion.Nordic_potion");
+    	potionCreep = new PotionCake(new ResourceLocation("creep_potion"), false, 0).setIconIndex(2, 0).setPotionName("potion.Creep_potion");
+    	potionSlime = new PotionCake(new ResourceLocation("slime_potion"), false, 0).setIconIndex(3, 0).setPotionName("potion.Slime_potion");
 
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent e){
-
-    	System.out.println("CakeIsALie.init()"); //output to console.
-
+    public void init(FMLInitializationEvent event){
+    	
+    	
     	AchievementPage.registerAchievementPage(new AchievementPage("CakeIsALie", new Achievement[]{
     			firstCake, poisonousCake, trappedCake, deathCake, anniversaryCake, explodeCreep, appleCake, appleGoldCake, pumpkinCake, spicedCake, starsCake,
     			watermelonCake, redstoneCake, lavaCake, nordicCake, waterIced, chocolateRoll, sandyCake, suffocation
     	}));
+    	
+    	//proxy.registerRenderThings(); plus besoin .?
+    	
+    	GameRegistry.registerBlock(chocolate_cake, "chocolate_cake");
+    	GameRegistry.registerBlock(apple_cake, "apple_cake");
+    	GameRegistry.registerBlock(gold_cake, "gold_cake");
+    	GameRegistry.registerBlock(trapped_cake, "trapped_cake");
+    	GameRegistry.registerBlock(poisoned_cake, "poisoned_cake");
+    	GameRegistry.registerBlock(lava_cake, "lava_cake");
+    	GameRegistry.registerBlock(basque_cake, "basque_cake");
+    	GameRegistry.registerBlock(redstone_cake, "redstone_cake");
+    	GameRegistry.registerBlock(brownie, "brownie");
+    	GameRegistry.registerBlock(chocolate_mousse, "chocolate_mousse");
+    	GameRegistry.registerBlock(cookies_cake, "cookies_cake");
+    	GameRegistry.registerBlock(ender_cake, "ender_cake");
+    	GameRegistry.registerBlock(pumpkin_cake, "pumpkin_cake");
+    	GameRegistry.registerBlock(spiced_cake, "spiced_cake");
+    	GameRegistry.registerBlock(sandy_cake, "sandy_cake");
+    	GameRegistry.registerBlock(stars_cake, "stars_cake");
+    	GameRegistry.registerBlock(watermelon_cake, "watermelon_cake");
+    	GameRegistry.registerBlock(nordic_cake, "nordic_cake");
+    	GameRegistry.registerBlock(anniversary_cake, "anniversary_cake");
+    	GameRegistry.registerBlock(paris_brest, "paris_brest");
+    	GameRegistry.registerBlock(hamburger, "hamburger");
+    	GameRegistry.registerBlock(cheese_cake, "cheese_cake");
+    	GameRegistry.registerBlock(chocolate_roll, "chocolate_roll");
+    	GameRegistry.registerBlock(carrot_cake, "carrot_cake");
+    	GameRegistry.registerBlock(slime_cake, "slime_cake");
+    	GameRegistry.registerBlock(muffins, "muffins");
+    	
+    	GameRegistry.registerItem(item_chocolate_cake, "item_chocolate_cake");
+    	GameRegistry.registerItem(item_apple_cake, "item_apple_cake");
+    	GameRegistry.registerItem(item_gold_cake, "item_gold_cake");
+    	GameRegistry.registerItem(item_trapped_cake, "item_trapped_cake");
+    	GameRegistry.registerItem(item_poisoned_cake, "item_poisoned_cake");
+    	GameRegistry.registerItem(item_lava_cake, "item_lava_cake");
+    	GameRegistry.registerItem(item_basque_cake, "item_basque_cake");
+    	GameRegistry.registerItem(item_redstone_cake, "item_redstone_cake");
+    	GameRegistry.registerItem(item_brownie, "item_brownie");
+    	GameRegistry.registerItem(item_chocolate_mousse, "item_chocolate_mousse");
+    	GameRegistry.registerItem(item_cookies_cake, "item_cookies_cake");
+    	GameRegistry.registerItem(item_ender_cake, "item_ender_cake");
+    	GameRegistry.registerItem(item_pumpkin_cake, "item_pumpkin_cake");
+    	GameRegistry.registerItem(item_spiced_cake, "item_spiced_cake");
+    	GameRegistry.registerItem(item_sandy_cake, "item_sandy_cake");
+    	GameRegistry.registerItem(item_stars_cake, "item_stars_cake");
+    	GameRegistry.registerItem(item_watermelon_cake, "item_watermelon_cake");
+    	GameRegistry.registerItem(item_nordic_cake, "item_nordic_cake");
+    	GameRegistry.registerItem(item_anniversary_cake, "item_anniversary_cake");
+    	GameRegistry.registerItem(item_paris_brest, "item_paris_brest");
+    	GameRegistry.registerItem(item_hamburger, "item_hamburger");
+    	GameRegistry.registerItem(item_cheese_cake, "item_cheese_cake");
+    	GameRegistry.registerItem(item_chocolate_roll, "item_chocolate_roll");
+    	GameRegistry.registerItem(item_carrot_cake, "item_carrot_cake");
+    	GameRegistry.registerItem(item_slime_cake, "item_slime_cake");
+    	GameRegistry.registerItem(item_muffins, "item_muffins");
+    	
+    	
+    	GameRegistry.registerItem(potion_hunger, "potion_hunger");
+    	GameRegistry.registerItem(potion_sandy, "potion_sandy");
+    	GameRegistry.registerItem(potion_nordic, "potion_nordic");
+    	GameRegistry.registerItem(potion_creep, "potion_creep");
+    	GameRegistry.registerItem(potion_slime, "potion_slime");
+    	GameRegistry.registerItem(splash_hunger, "splash_hunger");
+    	GameRegistry.registerItem(splash_sandy, "splash_sandy");
+    	GameRegistry.registerItem(splash_nordic, "splash_nordic");
+    	GameRegistry.registerItem(splash_creep, "splash_creep");
+    	GameRegistry.registerItem(splash_slime, "splash_slime");
+    	
+    	
+    	
+    	if(event.getSide() == Side.CLIENT){
+   	     RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+   	     
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(chocolate_cake), 0, new ModelResourceLocation(MODID+":chocolate_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(apple_cake), 0, new ModelResourceLocation(MODID+":apple_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(gold_cake), 0, new ModelResourceLocation(MODID+":gold_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(trapped_cake), 0, new ModelResourceLocation(MODID+":trapped_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(poisoned_cake), 0, new ModelResourceLocation(MODID+":poisoned_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(lava_cake), 0, new ModelResourceLocation(MODID+":lava_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(basque_cake), 0, new ModelResourceLocation(MODID+":basque_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(redstone_cake), 0, new ModelResourceLocation(MODID+":redstone_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(brownie), 0, new ModelResourceLocation(MODID+":brownie", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(chocolate_mousse), 0, new ModelResourceLocation(MODID+":chocolate_mousse", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(cookies_cake), 0, new ModelResourceLocation(MODID+":cookies_cake", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(ender_cake), 0, new ModelResourceLocation(MODID+":ender_cake", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(pumpkin_cake), 0, new ModelResourceLocation(MODID+":pumpkin_cake", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(spiced_cake), 0, new ModelResourceLocation(MODID+":spiced_cake", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(sandy_cake), 0, new ModelResourceLocation(MODID+":sandy_cake", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(stars_cake), 0, new ModelResourceLocation(MODID+":stars_cake", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(watermelon_cake), 0, new ModelResourceLocation(MODID+":watermelon_cake", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(nordic_cake), 0, new ModelResourceLocation(MODID+":nordic_cake", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(anniversary_cake), 0, new ModelResourceLocation(MODID+":anniversary_cake", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(paris_brest), 0, new ModelResourceLocation(MODID+":paris_brest", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(hamburger), 0, new ModelResourceLocation(MODID+":hamburger", "inventory"));
+   		 renderItem.getItemModelMesher().register(Item.getItemFromBlock(cheese_cake), 0, new ModelResourceLocation(MODID+":cheese_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(chocolate_roll), 0, new ModelResourceLocation(MODID+":chocolate_roll", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(carrot_cake), 0, new ModelResourceLocation(MODID+":carrot_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(slime_cake), 0, new ModelResourceLocation(MODID+":slime_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(Item.getItemFromBlock(muffins), 0, new ModelResourceLocation(MODID+":muffins", "inventory"));
 
-    	proxy.registerRenderThings();
+  
+   	     renderItem.getItemModelMesher().register(item_chocolate_cake, 0, new ModelResourceLocation(MODID+":item_chocolate_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_apple_cake, 0, new ModelResourceLocation(MODID+":item_apple_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_gold_cake, 0, new ModelResourceLocation(MODID+":item_gold_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_trapped_cake, 0, new ModelResourceLocation("cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_poisoned_cake, 0, new ModelResourceLocation("cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_lava_cake, 0, new ModelResourceLocation(MODID+":item_lava_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_basque_cake, 0, new ModelResourceLocation(MODID+":item_basque_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_redstone_cake, 0, new ModelResourceLocation(MODID+":item_redstone_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_brownie, 0, new ModelResourceLocation(MODID+":item_brownie", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_chocolate_mousse, 0, new ModelResourceLocation(MODID+":item_chocolate_mousse", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_cookies_cake, 0, new ModelResourceLocation(MODID+":item_cookies_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_ender_cake, 0, new ModelResourceLocation(MODID+":item_ender_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_pumpkin_cake, 0, new ModelResourceLocation(MODID+":item_pumpkin_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_spiced_cake, 0, new ModelResourceLocation(MODID+":item_spiced_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_sandy_cake, 0, new ModelResourceLocation(MODID+":item_sandy_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_stars_cake, 0, new ModelResourceLocation(MODID+":item_stars_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_watermelon_cake, 0, new ModelResourceLocation(MODID+":item_watermelon_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_nordic_cake, 0, new ModelResourceLocation(MODID+":item_nordic_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_anniversary_cake, 0, new ModelResourceLocation(MODID+":item_anniversary_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_paris_brest, 0, new ModelResourceLocation(MODID+":item_paris_brest", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_hamburger, 0, new ModelResourceLocation(MODID+":item_hamburger", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_cheese_cake, 0, new ModelResourceLocation(MODID+":item_cheese_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_chocolate_roll, 0, new ModelResourceLocation(MODID+":item_chocolate_roll", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_carrot_cake, 0, new ModelResourceLocation(MODID+":item_carrot_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_slime_cake, 0, new ModelResourceLocation(MODID+":item_slime_cake", "inventory"));
+   	     renderItem.getItemModelMesher().register(item_muffins, 0, new ModelResourceLocation(MODID+":item_muffins", "inventory"));
+   	     
+   	     renderItem.getItemModelMesher().register(potion_hunger, 0, new ModelResourceLocation(MODID+":potion_hunger", "inventory"));
+   	     renderItem.getItemModelMesher().register(potion_sandy, 0, new ModelResourceLocation(MODID+":potion_sandy", "inventory"));
+   	     renderItem.getItemModelMesher().register(potion_nordic, 0, new ModelResourceLocation(MODID+":potion_nordic", "inventory"));
+   	     renderItem.getItemModelMesher().register(potion_creep, 0, new ModelResourceLocation(MODID+":potion_creep", "inventory"));
+   	     renderItem.getItemModelMesher().register(potion_slime, 0, new ModelResourceLocation(MODID+":potion_slime", "inventory"));
+   	     renderItem.getItemModelMesher().register(splash_hunger, 0, new ModelResourceLocation(MODID+":splash_hunger", "inventory"));
+   	     renderItem.getItemModelMesher().register(splash_sandy, 0, new ModelResourceLocation(MODID+":splash_sandy", "inventory"));
+   	     renderItem.getItemModelMesher().register(splash_nordic, 0, new ModelResourceLocation(MODID+":splash_nordic", "inventory"));
+   	     renderItem.getItemModelMesher().register(splash_creep, 0, new ModelResourceLocation(MODID+":splash_creep", "inventory"));
+   	     renderItem.getItemModelMesher().register(splash_slime, 0, new ModelResourceLocation(MODID+":splash_slime", "inventory"));
+   	}
+    	
+    	
+    	
+    	
+    	BrewingRecipeRegistry.addRecipe(new ItemStack(Items.potionitem, 1), new ItemStack(Items.clay_ball, 1), new ItemStack(potion_hunger, 1));
+    	BrewingRecipeRegistry.addRecipe(new ItemStack(Items.potionitem, 1), new ItemStack(item_sandy_cake, 1), new ItemStack(potion_sandy, 1));
+    	BrewingRecipeRegistry.addRecipe(new ItemStack(Items.potionitem, 1), new ItemStack(item_anniversary_cake, 1), new ItemStack(potion_creep, 1));
+    	BrewingRecipeRegistry.addRecipe(new ItemStack(Items.potionitem, 1), new ItemStack(item_nordic_cake, 1), new ItemStack(potion_nordic, 1));
+    	BrewingRecipeRegistry.addRecipe(new ItemStack(Items.potionitem, 1), new ItemStack(item_slime_cake, 1), new ItemStack(potion_slime, 1));
+    	/*BrewingRecipeRegistry.addRecipe(new ItemStack(potion_hunger, 1), new ItemStack(Items.gunpowder, 1), new ItemStack(splash_hunger, 1));
+    	BrewingRecipeRegistry.addRecipe(new ItemStack(potion_sandy, 1), new ItemStack(Items.gunpowder, 1), new ItemStack(splash_sandy, 1));
+    	BrewingRecipeRegistry.addRecipe(new ItemStack(potion_creep, 1), new ItemStack(Items.gunpowder, 1), new ItemStack(splash_creep, 1));
+    	BrewingRecipeRegistry.addRecipe(new ItemStack(potion_nordic, 1), new ItemStack(Items.gunpowder, 1), new ItemStack(splash_nordic, 1));
+    	BrewingRecipeRegistry.addRecipe(new ItemStack(potion_slime, 1), new ItemStack(Items.gunpowder, 1), new ItemStack(splash_slime, 1));*/
 
-
-
-    	GameRegistry.registerBlock(cake1, "cake1");
-    	GameRegistry.registerBlock(cake2, "cake2");
-    	GameRegistry.registerBlock(cake3, "cake3");
-    	GameRegistry.registerBlock(cake4, "cake4");
-    	GameRegistry.registerBlock(cake5, "cake5");
-    	GameRegistry.registerBlock(cake6, "cake6");
-    	GameRegistry.registerBlock(cake7, "cake7");
-    	GameRegistry.registerBlock(cake8, "cake8");
-    	GameRegistry.registerBlock(cake9, "cake9");
-    	GameRegistry.registerBlock(cake10, "cake10");
-    	GameRegistry.registerBlock(cake11, "cake11");
-    	GameRegistry.registerBlock(cake12, "cake12");
-    	GameRegistry.registerBlock(cake13, "cake13");
-    	GameRegistry.registerBlock(cake14, "cake14");
-    	GameRegistry.registerBlock(cake15, "cake15");
-    	GameRegistry.registerBlock(cake16, "cake16");
-    	GameRegistry.registerBlock(cake17, "cake17");
-    	GameRegistry.registerBlock(cake18, "cake18");
-    	GameRegistry.registerBlock(cake19, "cake19");
-    	GameRegistry.registerBlock(cake19w, "cake19w");
-    	GameRegistry.registerBlock(cake20, "cake20");
-    	GameRegistry.registerBlock(cake20w, "cake20w");
-    	GameRegistry.registerBlock(cake20s, "cake20s");
-    	GameRegistry.registerBlock(cake21, "cake21");
-    	GameRegistry.registerBlock(cake22, "cake22");
-    	GameRegistry.registerBlock(cake23, "cake23");
-    	GameRegistry.registerBlock(cake24, "cake24");
-    	GameRegistry.registerBlock(cake25, "cake25");
-
-    	GameRegistry.registerItem(icake1, "icake1");
-    	GameRegistry.registerItem(icake2, "icake2");
-    	GameRegistry.registerItem(icake3, "icake3");
-    	GameRegistry.registerItem(icake4, "icake4");
-    	GameRegistry.registerItem(icake5, "icake5");
-    	GameRegistry.registerItem(icake6, "icake6");
-    	GameRegistry.registerItem(icake7, "icake7");
-    	GameRegistry.registerItem(icake8, "icake8");
-    	GameRegistry.registerItem(icake9, "icake9");
-    	GameRegistry.registerItem(icake10, "icake10");
-    	GameRegistry.registerItem(icake11, "icake11");
-    	GameRegistry.registerItem(icake12, "icake12");
-    	GameRegistry.registerItem(icake13, "icake13");
-    	GameRegistry.registerItem(icake14, "icake14");
-    	GameRegistry.registerItem(icake15, "icake15");
-    	GameRegistry.registerItem(icake16, "icake16");
-    	GameRegistry.registerItem(icake17, "icake17");
-    	GameRegistry.registerItem(icake18, "icake18");
-    	GameRegistry.registerItem(icake19, "icake19");
-    	GameRegistry.registerItem(icake20, "icake20");
-    	GameRegistry.registerItem(icake21, "icake21");
-    	GameRegistry.registerItem(icake22, "icake22");
-    	GameRegistry.registerItem(icake23, "icake23");
-    	GameRegistry.registerItem(icake24, "icake24");
-    	GameRegistry.registerItem(icake25, "icake25");
-    	GameRegistry.registerItem(hunger, "hunger");
-    	GameRegistry.registerItem(sandy, "sandy");
-    	GameRegistry.registerItem(nordic, "nordic");
-    	GameRegistry.registerItem(creep, "creep");
-
-
-    	GameRegistry.registerTileEntity(com.toinane.cakeisalie.TileEntityAnniversary.class, "tileAnniversary");
-    	GameRegistry.registerTileEntity(com.toinane.cakeisalie.TileEntityParisBrest.class, "tileParisBrest");
-    	GameRegistry.registerTileEntity(com.toinane.cakeisalie.TileEntityParisBrest2.class, "tileParisBrest2");
-    	GameRegistry.registerTileEntity(com.toinane.cakeisalie.TileEntityParisBrest3.class, "tileParisBrest3");
-
-
-    	GameRegistry.addRecipe(new ItemStack(icake1, 1), new Object[]
+    	
+    	GameRegistry.addRecipe(new ItemStack(item_chocolate_cake, 1), new Object[] 
     	{"XXX", "AAA", "OOO", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), new ItemStack(Items.dye, 1, 3), Character.valueOf('O'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake2, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_apple_cake, 1), new Object[] 
     	{"XXX", "AAA", "OOO", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), Items.apple, Character.valueOf('O'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake3, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_gold_cake, 1), new Object[] 
     	{"XXX", "AAA", "OOO", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), Items.golden_apple, Character.valueOf('O'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake4, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_trapped_cake, 1), new Object[] 
     	{"XXX", "AOA", "YYY", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), Items.gunpowder, Character.valueOf('O'), Blocks.tnt, Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake5, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_poisoned_cake, 1), new Object[] 
     	{"XXX", "AOA", "YYY", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), Items.sugar, Character.valueOf('O'), Items.spider_eye, Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake6, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_lava_cake, 1), new Object[] 
     	{"XXX", "AOA", "YYY", Character.valueOf('X'), Items.lava_bucket, Character.valueOf('A'), Items.blaze_powder, Character.valueOf('O'), Items.magma_cream, Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake7, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_basque_cake, 1), new Object[] 
     	{"XXX", "AAA", "OOO", Character.valueOf('X'), Items.egg, Character.valueOf('A'), Items.sugar, Character.valueOf('O'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake8, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_redstone_cake, 1), new Object[] 
     	{"XXX", "AOA", "YYY", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), Items.redstone, Character.valueOf('O'), Items.egg, Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake9, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_brownie, 1), new Object[] 
     	{"XXX", "AYA", "OOO", Character.valueOf('X'), new ItemStack(Items.dye, 1, 3), Character.valueOf('A'), Items.sugar, Character.valueOf('Y'), Items.egg, Character.valueOf('O'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake10, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_chocolate_mousse, 1), new Object[]
     	{"XXX", "AAA", Character.valueOf('X'), new ItemStack(Items.dye, 1, 3), Character.valueOf('A'), Items.egg});
-    	GameRegistry.addRecipe(new ItemStack(icake11, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_cookies_cake, 1), new Object[] 
     	{"XXX", "XYX", "OOO", Character.valueOf('X'), Items.cookie, Character.valueOf('Y'), Items.egg, Character.valueOf('O'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake12, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_ender_cake, 1), new Object[] 
     	{"XXX", "AYA", "OOO", Character.valueOf('X'), Items.ender_pearl, Character.valueOf('A'), Items.sugar, Character.valueOf('Y'), Items.egg, Character.valueOf('O'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake13, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_pumpkin_cake, 1), new Object[] 
     	{"XXX", "AAA", "OOO", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), Blocks.pumpkin, Character.valueOf('O'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake14, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_spiced_cake, 1), new Object[] 
     	{"XXX", "AYA", "OOO", Character.valueOf('X'), Items.sugar, Character.valueOf('A'), Items.fermented_spider_eye, Character.valueOf('Y'), Items.blaze_powder, Character.valueOf('O'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake15, 1), new Object[]
-    	{"XXX", "AAA", "XXX", Character.valueOf('X'), Blocks.sandstone, Character.valueOf('A'), Items.egg});
-    	GameRegistry.addRecipe(new ItemStack(icake16, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_sandy_cake, 1), new Object[] 
+    	{"XX", "XA", Character.valueOf('X'), Blocks.sandstone, Character.valueOf('A'), Items.egg});
+    	GameRegistry.addRecipe(new ItemStack(item_stars_cake, 1), new Object[] 
     	{"XXX", "AOA", "YYY", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), Items.nether_star, Character.valueOf('O'), Items.egg, Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake17, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_watermelon_cake, 1), new Object[] 
     	{"XXX", "AOA", "YYY", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), Items.melon, Character.valueOf('O'), Items.egg, Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake18, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_nordic_cake, 1), new Object[] 
     	{"XXX", "AOA", "YYY", Character.valueOf('X'), Items.snowball, Character.valueOf('A'), Blocks.packed_ice, Character.valueOf('O'), Items.fish, Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake19, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_anniversary_cake, 1), new Object[] 
     	{"XXX", "AOA", "YYY", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), Items.sugar, Character.valueOf('O'), new ItemStack(Items.skull, 1, 4), Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake20, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_paris_brest, 1), new Object[] 
     	{"XXX", "AAA", "XXX", Character.valueOf('X'), Items.wheat, Character.valueOf('A'), Items.egg});
-    	GameRegistry.addRecipe(new ItemStack(icake21, 1), new Object[]
-    	{"XXX", "XOX", "YYY", Character.valueOf('X'), Items.beef, Character.valueOf('O'), Items.cooked_beef, Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake22, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_hamburger, 3), new Object[] 
+    	{"YYY", "XXX", "YYY", Character.valueOf('X'), Items.beef, Character.valueOf('Y'), Items.wheat});
+    	GameRegistry.addRecipe(new ItemStack(item_hamburger, 1), new Object[] 
+    	{"Y ", "XY", Character.valueOf('X'), Items.beef, Character.valueOf('Y'), Items.wheat});
+    	GameRegistry.addRecipe(new ItemStack(item_hamburger, 1), new Object[] 
+    	{"Y ", "YX", Character.valueOf('X'), Items.beef, Character.valueOf('Y'), Items.wheat});
+    	GameRegistry.addRecipe(new ItemStack(item_cheese_cake, 1), new Object[] 
     	{"XXX", "YYY", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake23, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_chocolate_roll, 1), new Object[] 
     	{"XXX", "XAX", "XXX", Character.valueOf('X'), new ItemStack(Items.dye, 1, 3), Character.valueOf('A'), Items.milk_bucket});
-    	GameRegistry.addRecipe(new ItemStack(icake24, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_carrot_cake, 1), new Object[] 
     	{"XXX", "AAA", "YYY", Character.valueOf('X'), Items.milk_bucket, Character.valueOf('A'), Items.carrot, Character.valueOf('Y'), Items.wheat});
-    	GameRegistry.addRecipe(new ItemStack(icake25, 1), new Object[]
+    	GameRegistry.addRecipe(new ItemStack(item_slime_cake, 1), new Object[] 
     	{"XXX", "X X", "YYY", Character.valueOf('X'), Items.slime_ball, Character.valueOf('Y'), Items.wheat});
-
-    	GameRegistry.addRecipe(new ItemStack(hunger, 1), new Object[]
-    	{"X", "Y", Character.valueOf('X'), Items.clay_ball, Character.valueOf('Y'), new ItemStack(Items.potionitem, 1, 0)});
-
+    	GameRegistry.addRecipe(new ItemStack(item_muffins, 1), new Object[]
+    	{"A ", "XX", Character.valueOf('A'), Items.egg, Character.valueOf('X'), Items.wheat});
+    	//GameRegistry.addRecipe(new ItemStack(potion_hunger, 1), new Object[]
+    	//{"X", "Y", Character.valueOf('X'), Items.clay_ball, Character.valueOf('Y'), new ItemStack(Items.potionitem, 1, 0)});
+    	
     }
-
+    
     @EventHandler
     public void load(FMLInitializationEvent event)
     {
-    	// IMPORTANT: Be sure to register your handler on the correct bus!!! (see below)
-
-    	// the majority of events use the MinecraftForge event bus:
+ 
     	MinecraftForge.EVENT_BUS.register(new CakeHooks());
 
-    	// but some are on the FML bus:
-    	FMLCommonHandler.instance().bus().register(new EventHandlerCake());
-
+  
     	/*
     	NOTE: Registering to the correct BUS
-    	You have followed all the steps and your event handling methods just do not seem to be working, what could possibly be going on?
-    	Well, each event is posted to a different event bus, and if your event handler is registered to the incorrect bus, then your method will never get called.
+    	You have followed all the steps and your event handling methods just do not seem to be working, what could possibly be going on? 
+    	Well, each event is posted to a different event bus, and if your event handler is registered to the incorrect bus, then your method will never get called. 
     	The vast majority of events are posted to the MinecraftForge.EVENT_BUS, but there are several other event buses:
-
+    	
     	1. MinecraftForge.EVENT_BUS: Most events get posted to this bus.
-
+    	
     	2. MinecraftForge.TERRAIN_GEN_BUS: Most world generation events happen here, such as Populate, Decorate, etc., with the strange exception that Pre and Post events are on the regular EVENT_BUS
-
+    	
     	3. MinecraftForge.ORE_GEN_BUS: Ore generation, obviously
-
+    	
     	4. FML Events: these become very important in 1.7.2, as this is where TickEvents and KeyInputEvents are posted, with TickHandler and KeyHandler no longer existing.
     	*/
     }
-
+    
 }

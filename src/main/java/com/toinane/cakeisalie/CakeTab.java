@@ -25,7 +25,7 @@ public class CakeTab extends CreativeTabs {
 	@Override
 	public Item getTabIconItem() {
 	  
-	  return CakeIsALie.icake19;
+	  return CakeIsALie.item_anniversary_cake;
 	}
 	//===========================================================================
 }//END class

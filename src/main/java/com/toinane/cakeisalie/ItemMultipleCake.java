@@ -1,90 +1,77 @@
 package com.toinane.cakeisalie;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSnow;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 public class ItemMultipleCake extends Item {
 
-	private Block field_150935_a;
+	private final String name = "text";
+	private Block block;
+	
+	public String getName()
+	{
+		return name;
+	}
 
-	public ItemMultipleCake(Block p_i45329_1_){
-		this.field_150935_a = p_i45329_1_;
+	public ItemMultipleCake(Block block){
+		this.block = block;
 	}
 	
-	 public boolean onItemUse(ItemStack p_77648_1_, EntityPlayer p_77648_2_, World p_77648_3_, int p_77648_4_, int p_77648_5_, int p_77648_6_, int p_77648_7_, float p_77648_8_, float p_77648_9_, float p_77648_10_)
+	 public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ)
 	    {
-	        Block block = p_77648_3_.getBlock(p_77648_4_, p_77648_5_, p_77648_6_);
+	        IBlockState iblockstate = worldIn.getBlockState(pos);
+	        Block block = iblockstate.getBlock();
 
-	        if (block == Blocks.snow_layer && (p_77648_3_.getBlockMetadata(p_77648_4_, p_77648_5_, p_77648_6_) & 7) < 1)
+	        if (block == Blocks.snow_layer && ((Integer)iblockstate.getValue(BlockSnow.LAYERS)).intValue() < 1)
 	        {
-	            p_77648_7_ = 1;
+	            side = EnumFacing.UP;
 	        }
-	        else if (block != Blocks.vine && block != Blocks.tallgrass && block != Blocks.deadbush)
+	        else if (!block.isReplaceable(worldIn, pos))
 	        {
-	            if (p_77648_7_ == 0)
-	            {
-	                --p_77648_5_;
-	            }
-
-	            if (p_77648_7_ == 1)
-	            {
-	                ++p_77648_5_;
-	            }
-
-	            if (p_77648_7_ == 2)
-	            {
-	                --p_77648_6_;
-	            }
-
-	            if (p_77648_7_ == 3)
-	            {
-	                ++p_77648_6_;
-	            }
-
-	            if (p_77648_7_ == 4)
-	            {
-	                --p_77648_4_;
-	            }
-
-	            if (p_77648_7_ == 5)
-	            {
-	                ++p_77648_4_;
-	            }
+	            pos = pos.offset(side);
 	        }
 
-	        if (!p_77648_2_.canPlayerEdit(p_77648_4_, p_77648_5_, p_77648_6_, p_77648_7_, p_77648_1_))
+	        if (!playerIn.canPlayerEdit(pos, side, stack))
 	        {
 	            return false;
 	        }
-	        else if (p_77648_1_.stackSize == 0)
+	        else if (stack.stackSize == 0)
 	        {
 	            return false;
 	        }
 	        else
 	        {
-	            if (p_77648_3_.canPlaceEntityOnSide(this.field_150935_a, p_77648_4_, p_77648_5_, p_77648_6_, false, p_77648_7_, (Entity)null, p_77648_1_))
+	            if (worldIn.canBlockBePlaced(this.block, pos, false, side, (Entity)null, stack))
 	            {
-	                int i1 = this.field_150935_a.onBlockPlaced(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, p_77648_7_, p_77648_8_, p_77648_9_, p_77648_10_, 0);
+	                IBlockState iblockstate1 = this.block.onBlockPlaced(worldIn, pos, side, hitX, hitY, hitZ, 0, playerIn);
 
-	                if (p_77648_3_.setBlock(p_77648_4_, p_77648_5_, p_77648_6_, this.field_150935_a, i1, 3))
+	                if (worldIn.setBlockState(pos, iblockstate1, 3))
 	                {
-	                    if (p_77648_3_.getBlock(p_77648_4_, p_77648_5_, p_77648_6_) == this.field_150935_a)
+	                    iblockstate1 = worldIn.getBlockState(pos);
+
+	                    if (iblockstate1.getBlock() == this.block)
 	                    {
-	                        this.field_150935_a.onBlockPlacedBy(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, p_77648_2_, p_77648_1_);
-	                        this.field_150935_a.onPostBlockPlaced(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, i1);
+	                        ItemBlock.setTileEntityNBT(worldIn, playerIn, pos, stack);
+	                        iblockstate1.getBlock().onBlockPlacedBy(worldIn, pos, iblockstate1, playerIn, stack);
 	                    }
 
-	                    p_77648_3_.playSoundEffect((double)((float)p_77648_4_ + 0.5F), (double)((float)p_77648_5_ + 0.5F), (double)((float)p_77648_6_ + 0.5F), this.field_150935_a.stepSound.func_150496_b(), (this.field_150935_a.stepSound.getVolume() + 1.0F) / 2.0F, this.field_150935_a.stepSound.getPitch() * 0.8F);
-	                    --p_77648_1_.stackSize;
+	                    worldIn.playSoundEffect((double)((float)pos.getX() + 0.5F), (double)((float)pos.getY() + 0.5F), (double)((float)pos.getZ() + 0.5F), this.block.stepSound.getPlaceSound(), (this.block.stepSound.getVolume() + 1.0F) / 2.0F, this.block.stepSound.getFrequency() * 0.8F);
+	                    --stack.stackSize;
+	                    return true;
 	                }
 	            }
 
-	            return true;
+	            return false;
 	        }
 	    }
 	

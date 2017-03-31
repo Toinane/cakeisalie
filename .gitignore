@@ -1,8 +1,22 @@
-bin/
-
-.gradle/
-.settings/
+# eclipse
+bin
+*.launch
+.settings
+.metadata
 .classpath
 .project
-eclipse/.metadata/
-eclipse/.metadata/.plugins/org.eclipse.core.resources/.projects/Minecraft/.location
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run

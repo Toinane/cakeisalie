@@ -1,0 +1,23 @@
+{
+	"forge_marker": 1,
+	"textures": {
+        "particle": "cakeisalie:blocks/brownie_side",
+        "bottom": "cakeisalie:blocks/brownie_bottom",
+        "top": "cakeisalie:blocks/brownie_top",
+        "side": "cakeisalie:blocks/brownie_side",
+        "inside": "cakeisalie:blocks/brownie_inside"
+    },
+	 "elements": [
+        {   "from": [ 1, 0, 1 ],
+            "to": [ 15, 4, 15 ],
+            "faces": {
+                "down":  { "texture": "#bottom", "cullface": "down" },
+                "up":    { "texture": "#top" },
+                "north": { "texture": "#side" },
+                "south": { "texture": "#side" },
+                "west":  { "texture": "#side" },
+                "east":  { "texture": "#side" }
+            }
+        }
+	]
+}

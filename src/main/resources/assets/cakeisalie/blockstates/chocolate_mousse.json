@@ -1,0 +1,12 @@
+{
+	"forge_marker": 1,
+    "variants": {
+        "bites=0": { "model": "cakeisalie:chocolate_mousse" },
+		  "bites=1": { "model": "cakeisalie:chocolate_mousse" },
+		  "bites=2": { "model": "cakeisalie:chocolate_mousse" },
+		  "bites=3": { "model": "cakeisalie:chocolate_mousse" },
+        "bites=4": { "model": "cakeisalie:chocolate_mousse4" },
+		  "bites=5": { "model": "cakeisalie:chocolate_mousse" },
+		  "bites=6": { "model": "cakeisalie:chocolate_mousse" }
+    }
+}
