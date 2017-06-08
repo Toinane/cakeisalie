@@ -11,6 +11,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.stats.StatList;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
 public class ItemCakePotion extends Item {
@@ -48,25 +51,25 @@ public class ItemCakePotion extends Item {
         		}
         	}
         	else if(potion == "sandy"){
-        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionSandy.id, 400, 4));
+        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionSandy, 400, 4));
         	}
         	else if(potion == "nordic"){
-        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionNordic.id, 1600, 4));
+        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionNordic, 1600, 4));
         	}
         	else if(potion == "creep"){
-        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionCreep.id, 500, 4));
+        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionCreep, 500, 4));
         	}
         	else if(potion == "slime"){
-        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionSlime.id, 450, 4));
+        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionSlime, 450, 4));
         	}
         	
         }
 
         if (!player.capabilities.isCreativeMode) {
             if (item.stackSize <= 0){
-                return new ItemStack(Items.glass_bottle);
+                return new ItemStack(Items.GLASS_BOTTLE);
             }
-            player.inventory.addItemStackToInventory(new ItemStack(Items.glass_bottle));
+            player.inventory.addItemStackToInventory(new ItemStack(Items.GLASS_BOTTLE));
         }
         return item;
     }
@@ -81,28 +84,10 @@ public class ItemCakePotion extends Item {
     }
     
 
-    public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player){
-    	if(isSplash)
-        {
-            if (!player.capabilities.isCreativeMode)
-            {
-                --item.stackSize;
-            }
-
-            world.playSoundAtEntity(player, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-
-            if (!world.isRemote)
-            {
-                world.spawnEntityInWorld(new EntityCakePotion(world, player, item));
-            }
-
-            return item;
-        }
-        else
-        {
-            player.setItemInUse(item, this.getMaxItemUseDuration(item));
-            return item;
-        }
+    public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
+    {
+        playerIn.setActiveHand(hand);
+        return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
     }
 
     public boolean onItemUse(ItemStack item, EntityPlayer player, World world, int ok, int wtf, int nawak, int okok, float why, float ahah, float nul){

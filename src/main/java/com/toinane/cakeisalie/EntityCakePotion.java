@@ -1,17 +1,23 @@
 package com.toinane.cakeisalie;
 
 import java.util.List;
+
+import net.minecraft.entity.EntityAreaEffectCloud;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.potion.PotionType;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -28,7 +34,7 @@ public class EntityCakePotion extends EntityThrowable
 
     public EntityCakePotion(World worldIn, EntityLivingBase throwerIn, int meta)
     {
-        this(worldIn, throwerIn, new ItemStack(Items.potionitem, 1, meta));
+        this(worldIn, throwerIn, new ItemStack(Items.POTIONITEM, 1, meta));
     }
 
     public EntityCakePotion(World worldIn, EntityLivingBase throwerIn, ItemStack potionDamageIn)
@@ -40,7 +46,7 @@ public class EntityCakePotion extends EntityThrowable
     @SideOnly(Side.CLIENT)
     public EntityCakePotion(World worldIn, double x, double y, double z, int p_i1791_8_)
     {
-        this(worldIn, x, y, z, new ItemStack(Items.potionitem, 1, p_i1791_8_));
+        this(worldIn, x, y, z, new ItemStack(Items.POTIONITEM, 1, p_i1791_8_));
     }
 
     public EntityCakePotion(World worldIn, double x, double y, double z, ItemStack potionDamageIn)
@@ -68,13 +74,12 @@ public class EntityCakePotion extends EntityThrowable
         return -20.0F;
     }
 
-
     
-    protected void onImpact(MovingObjectPosition movingObject)
+    protected void onImpact(RayTraceResult result)
     {
         if (!this.worldObj.isRemote)
         {
-            int list = Items.potionitem.getDamage(new ItemStack(Items.potionitem, 1, 0));
+            int list = Items.POTIONITEM.getDamage(new ItemStack(Items.POTIONITEM, 1, 0));
 
             if (list != 0)
             {
@@ -91,7 +96,7 @@ public class EntityCakePotion extends EntityThrowable
                         {
                             double d1 = 1.0D - Math.sqrt(d0) / 4.0D;
 
-                            if (entitylivingbase == movingObject.entityHit)
+                            if (entitylivingbase == result.entityHit)
                             {
                                 d1 = 1.0D;
                             }
@@ -99,7 +104,7 @@ public class EntityCakePotion extends EntityThrowable
 
                             if (j > 20)
                             {
-    	                        if(potionDamage.getIsItemStackEqual(new ItemStack(CakeIsALie.splash_hunger))){
+    	                        if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_hunger))){
     	                        	if(entitylivingbase instanceof EntityPlayer){
     	                        		EntityPlayer player = (EntityPlayer) entitylivingbase;
     	                        		if(!player.capabilities.isCreativeMode){
@@ -108,25 +113,24 @@ public class EntityCakePotion extends EntityThrowable
     	                        	}
     	
     	                    	}
-    	                    	else if(potionDamage.getIsItemStackEqual(new ItemStack(CakeIsALie.splash_sandy))){
-    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSandy.id, 400, 4));
+    	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_sandy))){
+    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSandy, 400, 4));
     	                    	}
-    	                    	else if(potionDamage.getIsItemStackEqual(new ItemStack(CakeIsALie.splash_nordic))){
-    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionNordic.id, 1600, 4));
+    	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_nordic))){
+    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionNordic, 1600, 4));
     	                    	}
-    	                    	else if(potionDamage.getIsItemStackEqual(new ItemStack(CakeIsALie.splash_creep))){
-    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionCreep.id, 500, 4));
+    	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_creep))){
+    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionCreep, 500, 4));
     	                    	}
-    	                    	else if(potionDamage.getIsItemStackEqual(new ItemStack(CakeIsALie.splash_slime))){
-    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSlime.id, 450, 4));
+    	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_slime))){
+    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSlime, 450, 4));
     	                    	}
                             }
                         }
                     }
                 }
             }
-
-            this.worldObj.playAuxSFX(2002, new BlockPos(this), list);
+            this.worldObj.playEvent(2002, new BlockPos(this), list);
             this.setDead();
         }
     }
@@ -138,7 +142,7 @@ public class EntityCakePotion extends EntityThrowable
     /**
      * Called when this EntityThrowable hits a block or entity.
      */
-    protected void onImpactfe(MovingObjectPosition movingObject)
+    protected void onImpactfe(RayTraceResult result)
     {
         if (!this.worldObj.isRemote)
         {
@@ -157,7 +161,7 @@ public class EntityCakePotion extends EntityThrowable
                     {
                         double d1 = 1.0D - Math.sqrt(d0) / 4.0D;
 
-                        if (entitylivingbase == movingObject.entityHit)
+                        if (entitylivingbase == result.entityHit)
                         {
                             d1 = 1.0D;
                         }
@@ -165,7 +169,7 @@ public class EntityCakePotion extends EntityThrowable
 
                         if (j > 20)
                         {
-	                        if(potionDamage.getIsItemStackEqual(new ItemStack(CakeIsALie.splash_hunger))){
+	                        if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_hunger))){
 	                        	if(entitylivingbase instanceof EntityPlayer){
 	                        		EntityPlayer player = (EntityPlayer) entitylivingbase;
 	                        		if(!player.capabilities.isCreativeMode){
@@ -174,17 +178,17 @@ public class EntityCakePotion extends EntityThrowable
 	                        	}
 	
 	                    	}
-	                    	else if(potionDamage.getIsItemStackEqual(new ItemStack(CakeIsALie.splash_sandy))){
-	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSandy.id, 400, 4));
+	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_sandy))){
+	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSandy, 400, 4));
 	                    	}
-	                    	else if(potionDamage.getIsItemStackEqual(new ItemStack(CakeIsALie.splash_nordic))){
-	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionNordic.id, 1600, 4));
+	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_nordic))){
+	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionNordic, 1600, 4));
 	                    	}
-	                    	else if(potionDamage.getIsItemStackEqual(new ItemStack(CakeIsALie.splash_creep))){
-	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionCreep.id, 500, 4));
+	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_creep))){
+	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionCreep, 500, 4));
 	                    	}
-	                    	else if(potionDamage.getIsItemStackEqual(new ItemStack(CakeIsALie.splash_slime))){
-	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSlime.id, 450, 4));
+	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_slime))){
+	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSlime, 450, 4));
 	                    	}
                         }
                     }
@@ -192,9 +196,8 @@ public class EntityCakePotion extends EntityThrowable
             }
         }
 
-        this.worldObj.playAuxSFX(2002, new BlockPos(this), Items.potionitem.getDamage(new ItemStack(Items.potionitem, 1, 0)));
+        this.worldObj.playEvent(2002, new BlockPos(this), Items.POTIONITEM.getDamage(new ItemStack(Items.POTIONITEM, 1, 0)));
         this.setDead();
     }
-
 
 }
