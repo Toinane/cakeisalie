@@ -1,7 +1,10 @@
-package com.toinane.cakeisalie;
+package com.toinane.cakeisalie.item;
 
 import java.util.Iterator;
 import java.util.List;
+
+import com.toinane.cakeisalie.CakeIsALie;
+import com.toinane.cakeisalie.CommonProxy;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityPotion;
@@ -26,6 +29,7 @@ public class ItemCakePotion extends Item {
 		this.setMaxDamage(0);
 		potion = name;
 		isSplash = splash;
+		this.setCreativeTab(CommonProxy.cake_tab);
 	}
 
 
@@ -51,16 +55,16 @@ public class ItemCakePotion extends Item {
         		}
         	}
         	else if(potion == "sandy"){
-        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionSandy, 400, 4));
+        		player.addPotionEffect(new PotionEffect(CommonProxy.potionSandy, 400, 4));
         	}
         	else if(potion == "nordic"){
-        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionNordic, 1600, 4));
+        		player.addPotionEffect(new PotionEffect(CommonProxy.potionNordic, 1600, 4));
         	}
         	else if(potion == "creep"){
-        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionCreep, 500, 4));
+        		player.addPotionEffect(new PotionEffect(CommonProxy.potionCreep, 500, 4));
         	}
         	else if(potion == "slime"){
-        		player.addPotionEffect(new PotionEffect(CakeIsALie.potionSlime, 450, 4));
+        		player.addPotionEffect(new PotionEffect(CommonProxy.potionSlime, 450, 4));
         	}
         	
         }

@@ -1,4 +1,4 @@
-package com.toinane.cakeisalie;
+package com.toinane.cakeisalie.potion;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.ITextureObject;
@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 public class PotionCake extends Potion{
 	
 	
-	protected PotionCake(ResourceLocation location, boolean badEffect, int potionColor) {
+	public PotionCake(ResourceLocation location, boolean badEffect, int potionColor) {
         super(badEffect, potionColor);
     }
 

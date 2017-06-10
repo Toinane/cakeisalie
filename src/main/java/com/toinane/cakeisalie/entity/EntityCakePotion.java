@@ -1,6 +1,9 @@
-package com.toinane.cakeisalie;
+package com.toinane.cakeisalie.entity;
 
 import java.util.List;
+
+import com.toinane.cakeisalie.CakeIsALie;
+import com.toinane.cakeisalie.CommonProxy;
 
 import net.minecraft.entity.EntityAreaEffectCloud;
 import net.minecraft.entity.EntityLivingBase;
@@ -104,7 +107,7 @@ public class EntityCakePotion extends EntityThrowable
 
                             if (j > 20)
                             {
-    	                        if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_hunger))){
+    	                        if(potionDamage.isItemEqual(new ItemStack(CommonProxy.splash_hunger))){
     	                        	if(entitylivingbase instanceof EntityPlayer){
     	                        		EntityPlayer player = (EntityPlayer) entitylivingbase;
     	                        		if(!player.capabilities.isCreativeMode){
@@ -113,17 +116,17 @@ public class EntityCakePotion extends EntityThrowable
     	                        	}
     	
     	                    	}
-    	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_sandy))){
-    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSandy, 400, 4));
+    	                    	else if(potionDamage.isItemEqual(new ItemStack(CommonProxy.splash_sandy))){
+    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CommonProxy.potionSandy, 400, 4));
     	                    	}
-    	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_nordic))){
-    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionNordic, 1600, 4));
+    	                    	else if(potionDamage.isItemEqual(new ItemStack(CommonProxy.splash_nordic))){
+    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CommonProxy.potionNordic, 1600, 4));
     	                    	}
-    	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_creep))){
-    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionCreep, 500, 4));
+    	                    	else if(potionDamage.isItemEqual(new ItemStack(CommonProxy.splash_creep))){
+    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CommonProxy.potionCreep, 500, 4));
     	                    	}
-    	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_slime))){
-    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSlime, 450, 4));
+    	                    	else if(potionDamage.isItemEqual(new ItemStack(CommonProxy.splash_slime))){
+    	                    		entitylivingbase.addPotionEffect(new PotionEffect(CommonProxy.potionSlime, 450, 4));
     	                    	}
                             }
                         }
@@ -169,7 +172,7 @@ public class EntityCakePotion extends EntityThrowable
 
                         if (j > 20)
                         {
-	                        if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_hunger))){
+	                        if(potionDamage.isItemEqual(new ItemStack(CommonProxy.splash_hunger))){
 	                        	if(entitylivingbase instanceof EntityPlayer){
 	                        		EntityPlayer player = (EntityPlayer) entitylivingbase;
 	                        		if(!player.capabilities.isCreativeMode){
@@ -178,17 +181,17 @@ public class EntityCakePotion extends EntityThrowable
 	                        	}
 	
 	                    	}
-	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_sandy))){
-	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSandy, 400, 4));
+	                    	else if(potionDamage.isItemEqual(new ItemStack(CommonProxy.splash_sandy))){
+	                    		entitylivingbase.addPotionEffect(new PotionEffect(CommonProxy.potionSandy, 400, 4));
 	                    	}
-	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_nordic))){
-	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionNordic, 1600, 4));
+	                    	else if(potionDamage.isItemEqual(new ItemStack(CommonProxy.splash_nordic))){
+	                    		entitylivingbase.addPotionEffect(new PotionEffect(CommonProxy.potionNordic, 1600, 4));
 	                    	}
-	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_creep))){
-	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionCreep, 500, 4));
+	                    	else if(potionDamage.isItemEqual(new ItemStack(CommonProxy.splash_creep))){
+	                    		entitylivingbase.addPotionEffect(new PotionEffect(CommonProxy.potionCreep, 500, 4));
 	                    	}
-	                    	else if(potionDamage.isItemEqual(new ItemStack(CakeIsALie.splash_slime))){
-	                    		entitylivingbase.addPotionEffect(new PotionEffect(CakeIsALie.potionSlime, 450, 4));
+	                    	else if(potionDamage.isItemEqual(new ItemStack(CommonProxy.splash_slime))){
+	                    		entitylivingbase.addPotionEffect(new PotionEffect(CommonProxy.potionSlime, 450, 4));
 	                    	}
                         }
                     }

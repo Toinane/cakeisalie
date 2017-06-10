@@ -1,6 +1,9 @@
-package com.toinane.cakeisalie;
+package com.toinane.cakeisalie.hook;
 
 import java.util.Random;
+
+import com.toinane.cakeisalie.CakeIsALie;
+import com.toinane.cakeisalie.CommonProxy;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -41,7 +44,7 @@ public class CakeHooks {
 	public void onLivingDeath(LivingDeathEvent event){
 		if(event.getEntity() instanceof EntityCreeper && event.getSource().getDamageType() == "explosion.player"){
 			if(event.getSource().getSourceOfDamage() instanceof EntityPlayer){
-				((EntityPlayer) event.getSource().getSourceOfDamage()).addStat(CakeIsALie.explodeCreep, 1);
+				((EntityPlayer) event.getSource().getSourceOfDamage()).addStat(CommonProxy.explodeCreep, 1);
 			}
 			
 		}
@@ -51,7 +54,7 @@ public class CakeHooks {
 	public void onEntityJump(LivingJumpEvent event){
 		if(event.getEntity() instanceof EntityPlayer){
 			EntityPlayer player = (EntityPlayer) event.getEntity();
-			if(player.isPotionActive(CakeIsALie.potionSlime)){
+			if(player.isPotionActive(CommonProxy.potionSlime)){
 				player.motionY = 0.8F;
 			}
 		}
@@ -77,50 +80,50 @@ public class CakeHooks {
 	@SubscribeEvent
 	public void onCrafting(ItemCraftedEvent event){
 		//System.out.println(event.crafting);
-		 if(event.crafting.getItem() == CakeIsALie.item_chocolate_cake){
-			 event.player.addStat(CakeIsALie.firstCake, 1);
+		 if(event.crafting.getItem() == CommonProxy.item_chocolate_cake){
+			 event.player.addStat(CommonProxy.firstCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_apple_cake){
-			 event.player.addStat(CakeIsALie.appleCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_apple_cake){
+			 event.player.addStat(CommonProxy.appleCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_gold_cake){
-			 event.player.addStat(CakeIsALie.appleGoldCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_gold_cake){
+			 event.player.addStat(CommonProxy.appleGoldCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_trapped_cake){
-			 event.player.addStat(CakeIsALie.trappedCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_trapped_cake){
+			 event.player.addStat(CommonProxy.trappedCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_poisoned_cake){
-			 event.player.addStat(CakeIsALie.poisonousCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_poisoned_cake){
+			 event.player.addStat(CommonProxy.poisonousCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_pumpkin_cake){
-			 event.player.addStat(CakeIsALie.pumpkinCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_pumpkin_cake){
+			 event.player.addStat(CommonProxy.pumpkinCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_spiced_cake){
-			 event.player.addStat(CakeIsALie.spicedCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_spiced_cake){
+			 event.player.addStat(CommonProxy.spicedCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_stars_cake){
-			 event.player.addStat(CakeIsALie.starsCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_stars_cake){
+			 event.player.addStat(CommonProxy.starsCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_anniversary_cake){
-			 event.player.addStat(CakeIsALie.anniversaryCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_anniversary_cake){
+			 event.player.addStat(CommonProxy.anniversaryCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_watermelon_cake){
-			 event.player.addStat(CakeIsALie.watermelonCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_watermelon_cake){
+			 event.player.addStat(CommonProxy.watermelonCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_redstone_cake){
-			 event.player.addStat(CakeIsALie.redstoneCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_redstone_cake){
+			 event.player.addStat(CommonProxy.redstoneCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_lava_cake){
-			 event.player.addStat(CakeIsALie.lavaCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_lava_cake){
+			 event.player.addStat(CommonProxy.lavaCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_nordic_cake){
-			 event.player.addStat(CakeIsALie.nordicCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_nordic_cake){
+			 event.player.addStat(CommonProxy.nordicCake, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_chocolate_roll){
-			 event.player.addStat(CakeIsALie.chocolateRoll, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_chocolate_roll){
+			 event.player.addStat(CommonProxy.chocolateRoll, 1);
 		 }
-		 else if(event.crafting.getItem() == CakeIsALie.item_sandy_cake){
-			 event.player.addStat(CakeIsALie.sandyCake, 1);
+		 else if(event.crafting.getItem() == CommonProxy.item_sandy_cake){
+			 event.player.addStat(CommonProxy.sandyCake, 1);
 		 }
 	 }
 	
@@ -130,7 +133,7 @@ public class CakeHooks {
 	{
 		 World world = event.getEntity().getEntityWorld();
 
-	     if (event.getEntityLiving().isPotionActive(CakeIsALie.potionSandy)){
+	     if (event.getEntityLiving().isPotionActive(CommonProxy.potionSandy)){
 	    	 double velX;
     		 double velZ;
     		 
@@ -146,14 +149,14 @@ public class CakeHooks {
 	        		 event.getEntityLiving().entityDropItem(new ItemStack(Item.getItemFromBlock(Blocks.SAND), 1), 1.1f);
 	        	 }
 	        	 if(event.getEntityLiving() instanceof EntityPlayer){
-	        		 ((EntityPlayer) event.getEntityLiving()).addStat(CakeIsALie.suffocation, 1);
+	        		 ((EntityPlayer) event.getEntityLiving()).addStat(CommonProxy.suffocation, 1);
 	        	 }
 	         }
 	     }
 	     
 	     
 	     
-	     if(event.getEntityLiving().isPotionActive(CakeIsALie.potionNordic)){
+	     if(event.getEntityLiving().isPotionActive(CommonProxy.potionNordic)){
 	    	 
     		 int posX = (int) event.getEntityLiving().posX;
     		 int posY = (int) event.getEntityLiving().posY - 1;
@@ -208,7 +211,7 @@ public class CakeHooks {
     		 }
     		 if(iceTotal == 100){
     			 if(event.getEntityLiving() instanceof EntityPlayer){
-    				 ((EntityPlayer) event.getEntityLiving()).addStat(CakeIsALie.waterIced, 1);
+    				 ((EntityPlayer) event.getEntityLiving()).addStat(CommonProxy.waterIced, 1);
 	        	 }
     			 iceTotal = 0;
     		 }
@@ -216,11 +219,11 @@ public class CakeHooks {
 	     
 	     
 	     
-	     if(event.getEntityLiving().isPotionActive(CakeIsALie.potionCreep)){
-	    	 if(event.getEntityLiving().getActivePotionEffect(CakeIsALie.potionCreep).getDuration() == 50){
+	     if(event.getEntityLiving().isPotionActive(CommonProxy.potionCreep)){
+	    	 if(event.getEntityLiving().getActivePotionEffect(CommonProxy.potionCreep).getDuration() == 50){
 	    		 event.getEntityLiving().playSound(SoundEvents.ENTITY_CREEPER_PRIMED, 1.0F, 1F);
 	    	 }
-	    	 if(event.getEntityLiving().getActivePotionEffect(CakeIsALie.potionCreep).getDuration() >= 70 && world.rand.nextInt(20) <= 5){
+	    	 if(event.getEntityLiving().getActivePotionEffect(CommonProxy.potionCreep).getDuration() >= 70 && world.rand.nextInt(20) <= 5){
 	    		 double velX;
 	    		 double velZ;
 	    		 
@@ -233,7 +236,7 @@ public class CakeHooks {
 	    			 world.spawnParticle(EnumParticleTypes.CLOUD, event.getEntityLiving().posX , event.getEntityLiving().posY - Math.random()*(1.6D - 0.0D), event.getEntityLiving().posZ, velX, 0.2D, velZ);
 	    		 }
 	    	 }
-	    	 if(event.getEntityLiving().getActivePotionEffect(CakeIsALie.potionCreep).getDuration() <= 70){
+	    	 if(event.getEntityLiving().getActivePotionEffect(CommonProxy.potionCreep).getDuration() <= 70){
 	    		 double velX;
 	    		 double velZ;
 	    		 
@@ -247,7 +250,7 @@ public class CakeHooks {
 	    	 
 	    		 }
 	    	 }
-	    	 if(event.getEntityLiving().getActivePotionEffect(CakeIsALie.potionCreep).getDuration() <= 2){
+	    	 if(event.getEntityLiving().getActivePotionEffect(CommonProxy.potionCreep).getDuration() <= 2){
 	    		 if(!world.isRemote){
 	    			 world.createExplosion(event.getEntityLiving(),  event.getEntityLiving().posX,  event.getEntityLiving().posY,  event.getEntityLiving().posZ, 5.5F, true);
 	    			 event.getEntityLiving().attackEntityFrom(DamageSource.causeExplosionDamage(event.getEntityLiving()), Float.MAX_VALUE);
@@ -257,7 +260,7 @@ public class CakeHooks {
 	     
 	     
 	     
-	     if(event.getEntityLiving().isPotionActive(CakeIsALie.potionSlime)){
+	     if(event.getEntityLiving().isPotionActive(CommonProxy.potionSlime)){
 
  			BlockPos topPlayer = new BlockPos(event.getEntityLiving().posX, event.getEntityLiving().posY+2, event.getEntityLiving().posZ);
 			if(!world.getBlockState(topPlayer).getBlock().equals(Blocks.AIR) && !event.getEntityLiving().isSneaking()){

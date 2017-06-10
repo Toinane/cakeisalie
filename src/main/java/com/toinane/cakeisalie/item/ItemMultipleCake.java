@@ -1,4 +1,6 @@
-package com.toinane.cakeisalie;
+package com.toinane.cakeisalie.item;
+
+import com.toinane.cakeisalie.CommonProxy;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSnow;
@@ -24,6 +26,7 @@ public class ItemMultipleCake extends Item {
     public ItemMultipleCake(Block block)
     {
         this.block = block;
+        this.setCreativeTab(CommonProxy.cake_tab);
     }
 
     /**
