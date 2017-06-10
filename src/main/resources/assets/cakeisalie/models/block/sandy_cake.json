@@ -1,0 +1,24 @@
+{
+	"forge_marker": 1,
+	"textures": {
+        "particle": "cakeisalie:blocks/sandy_cake",
+        "bottom": "cakeisalie:blocks/sandy_cake",
+        "top": "cakeisalie:blocks/sandy_cake",
+        "side": "cakeisalie:blocks/sandy_cake",
+        "inside": "cakeisalie:blocks/sandy_cake"
+    },
+	 "elements": [
+        {
+			   "from": [ 5, 0, 5 ],
+		  	   "to": [ 11, 1, 11 ],
+		  	   "faces": {
+				   "north": { "texture": "#side", "uv": [ 5, 10, 11, 11 ] },
+				   "east": { "texture": "#side", "uv": [ 5, 10, 11, 11 ] },
+				   "south": { "texture": "#side", "uv": [ 5, 10, 11, 11 ] },
+				   "west": { "texture": "#side", "uv": [ 5, 10, 11, 11 ] },
+				   "up": { "texture": "#top", "uv": [ 5, 5, 11, 11 ] },
+				   "down": { "texture": "#bottom", "uv": [ 5, 5, 11, 11 ], "cullface": "down" }
+			  }
+        }
+	]
+}

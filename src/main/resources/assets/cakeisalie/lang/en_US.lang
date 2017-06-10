@@ -1,73 +1,82 @@
 /**
- * @version 4.04
+ * @version 5.1.1
  * @author Toinane.
  *
  * Custom name for : CakeIsALie mod.
  */
- 
-tile.Chocolate_cake.name=Chocolate Cake
-tile.Apple_cake.name=Apple Cake
-tile.Gold_cake.name=Apple Gold Cake
-tile.Trapped_cake.name=Trapped Cake
-tile.Poisoned_cake.name=Poisoned Cake
-tile.Lava_cake.name=Lava Cake
-tile.Basque_cake.name=Basque Cake
-tile.Redstone_cake.name=Redstone Cake
-tile.Brownie.name=Brownie
-tile.Chocolate_mousse.name=Chocolate Mousse
-tile.Cookies_cake.name=Cookies Cake
-tile.Ender_cake.name=Ender Cake
-tile.Pumpkin_cake.name=Pumpkin Cake
-tile.Spiced_cake.name=Spiced Cake
-tile.Sandy_cake.name=Sandy Cake
-tile.Stars_cake.name=Stars Cake
-tile.Water-melon_cake.name=Water-melon Cake
-tile.Nordic_cake.name=Nordic Cake
-tile.Anniversary_cake.name=Anniversary Cake
-tile.Paris_brest.name=Paris-Brest
-tile.Meat_cake.name=Meat Cake
-tile.Cheese_cake.name=Cheese Cake
-tile.Chocolate_roll.name=Chocolate Roll
-tile.Carrot_cake.name=Carrot Cake
-tile.Slime_cake.name=Slimy Cake
 
-item.Chocolate_cake.name=Chocolate Cake
-item.Apple_cake.name=Apple Cake
-item.Gold_cake.name=Apple Gold Cake
-item.Trapped_cake.name=Trapped Cake
-item.Poisoned_cake.name=Poisoned Cake
-item.Lava_cake.name=Lava Cake
-item.Basque_cake.name=Basque Cake
-item.Redstone_cake.name=Redstone Cake
-item.Brownie.name=Brownie
-item.Chocolate_mousse.name=Chocolate Mousse
-item.Cookies_cake.name=Cookies Cake
-item.Ender_cake.name=Ender Cake
-item.Pumpkin_cake.name=Pumpkin Cake
-item.Spiced_cake.name=Spiced Cake
-item.Sandy_cake.name=Sandy Cake
-item.Stars_cake.name=Stars Cake
-item.Water-melon_cake.name=Water-melon Cake
-item.Nordic_cake.name=Nordic Cake
-item.Anniversary_cake.name=Anniversary Cake
-item.Paris_brest.name=Paris-Brest
-item.Meat_cake.name=Meat Cake
-item.Cheese_cake.name=Cheese Cake
-item.Chocolate_roll.name=Chocolate Roll
-item.Carrot_cake.name=Carrot Cake
-item.Slime_cake.name=Slimy Cake
-item.Unknow.name=Unknow
+tile.chocolate_cake.name=Chocolate Cake
+tile.apple_cake.name=Apple Cake
+tile.gold_cake.name=Apple Gold Cake
+tile.trapped_cake.name=Trapped Cake
+tile.poisoned_cake.name=Poisoned Cake
+tile.lava_cake.name=Lava Cake
+tile.basque_cake.name=Basque Cake
+tile.redstone_cake.name=Redstone Cake
+tile.brownie.name=Brownie
+tile.chocolate_mousse.name=Chocolate Mousse
+tile.cookies_cake.name=Cookies Cake
+tile.ender_cake.name=Ender Cake
+tile.pumpkin_cake.name=Pumpkin Cake
+tile.spiced_cake.name=Spiced Cake
+tile.sandy_cake.name=Sandy Cake
+tile.stars_cake.name=Stars Cake
+tile.watermelon_cake.name=Water-melon Cake
+tile.nordic_cake.name=Nordic Cake
+tile.anniversary_cake.name=Anniversary Cake
+tile.paris_brest.name=Paris-Brest
+tile.hamburger.name=Hamburger
+tile.cheese_cake.name=Cheese Cake
+tile.chocolate_roll.name=Chocolate Roll
+tile.carrot_cake.name=Carrot Cake
+tile.slime_cake.name=Slimy Cake
+tile.muffins.name=Muffins
 
-item.Hunger_potion.name=Potion of Hunger
-item.Sandy_potion.name=Potion of Sand
-item.Nordic_potion.name=Nordic Potion
-item.Creep_potion.name=Kamikaze Potion
+item.chocolate_cake.name=Chocolate Cake
+item.apple_cake.name=Apple Cake
+item.gold_cake.name=Apple Gold Cake
+item.trapped_cake.name=Trapped Cake
+item.poisoned_cake.name=Poisoned Cake
+item.lava_cake.name=Lava Cake
+item.basque_cake.name=Basque Cake
+item.redstone_cake.name=Redstone Cake
+item.brownie.name=Brownie
+item.chocolate_mousse.name=Chocolate Mousse
+item.cookies_cake.name=Cookies Cake
+item.ender_cake.name=Ender Cake
+item.pumpkin_cake.name=Pumpkin Cake
+item.spiced_cake.name=Spiced Cake
+item.sandy_cake.name=Sandy Cake
+item.stars_cake.name=Stars Cake
+item.water-melon_cake.name=Water-melon Cake
+item.nordic_cake.name=Nordic Cake
+item.anniversary_cake.name=Anniversary Cake
+item.paris_brest.name=Paris-Brest
+item.hamburger.name=Hamburger
+item.cheese_cake.name=Cheese Cake
+item.chocolate_roll.name=Chocolate Roll
+item.carrot_cake.name=Carrot Cake
+item.slime_cake.name=Slimy Cake
+item.muffins.name=Muffins
+item.unknow.name=Unknow
 
-potion.Sandy_potion=Suffocation
-potion.Nordic_potion=Frosted
-potion.Creep_potion=Kamikaze!
+item.hunger_potion.name=Potion of Hunger
+item.sandy_potion.name=Potion of Sand
+item.nordic_potion.name=Nordic Potion
+item.creep_potion.name=Kamikaze Potion
+item.slime_potion.name=Slime Potion
+item.hunger_splash_potion.name=Splash Potion of Hunger
+item.sandy_splash_potion.name=Splash Potion of Sand
+item.nordic_splash_potion.name=Nordic Splash Potion
+item.creep_splash_potion.name=Kamikaze Splash Potion
+item.slime_splash_potion.name=Slime Splash Potion
 
-itemGroup.cakeTab=CakeIsALie
+potion.sandy_potion=Suffocation
+potion.nordic_potion=Frosted
+potion.creep_potion=Kamikaze!
+potion.slime_potion=Slimy!
+
+itemGroup.cake_tab=CakeIsALie
 
 achievement.First=Chocolate Cake
 achievement.First.desc=The first of a long list
