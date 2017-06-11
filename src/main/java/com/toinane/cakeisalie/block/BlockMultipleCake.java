@@ -21,6 +21,7 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.stats.StatList;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -39,90 +40,94 @@ public class BlockMultipleCake extends Block {
 
 	/** Item for dropping. */
 	private String cake;
+	private Integer parts;
 	public static final PropertyInteger BITES = PropertyInteger.create("bites", 0, 6);
 
-	
 	/**
 	 * Calls parent constructor and passes material.
 	 * 
 	 * @param cake -> i
 	 */
-	public BlockMultipleCake(String name){
+	public BlockMultipleCake(String cake, Integer parts){
 		super(Material.CAKE);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(BITES, Integer.valueOf(0)));
 		this.setTickRandomly(true);
 		this.setSoundType(SoundType.CLOTH);
-		cake = name;
+		this.cake = cake;
+		this.parts = parts;
 	}
 	
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
-		switch(cake){
-			case "basque_cake":
-			case "cheese_cake":
-			case "spiced_cake":
-				return new AxisAlignedBB(0.0625D, 0D, 0.0625D, 0.9375D, 0.3125D, 0.9375D);
-			
-			case "brownie":
-			case "chocolate_mousse":
-	        	return new AxisAlignedBB[] {
-	        		new AxisAlignedBB(0.0625D, 0D, 0.0625D, 0.9375D, 0.25D, 0.9375D),
-	        		new AxisAlignedBB(0.3125D, 0D, 0.0625D, 0.9375D, 0.25D, 0.9375D),
-	        		new AxisAlignedBB(0.6875D, 0D, 0.0625D, 0.9375D, 0.25D, 0.9375D)}
-	        		[((Integer)state.getValue(BITES)).intValue()];
-			
-			case "sandy_cake":
-				return new AxisAlignedBB(0.3125D, 0D, 0.3125D, 0.6875D, 0.0625D, 0.6875D);
-			
-			case "nordic_cake":
-				return new AxisAlignedBB[] {
-	        		new AxisAlignedBB(0.0625D, 0D, 0.3125D, 0.9375D, 0.25D, 0.6875D),
-	        		new AxisAlignedBB(0.3125D, 0D, 0.3125D, 0.9375D, 0.25D, 0.6875D),
-	        		new AxisAlignedBB(0.6875D, 0D, 0.3125D, 0.9375D, 0.25D, 0.6875D)}
-	        		[((Integer)state.getValue(BITES)).intValue()];
-			
-			case "chocolate_roll":
-				return new AxisAlignedBB[] {
-	        		new AxisAlignedBB(0.0625D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
-	        		new AxisAlignedBB(0.1875D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
-	        		new AxisAlignedBB(0.3125D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
-	        		new AxisAlignedBB(0.4375D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
-	        		new AxisAlignedBB(0.5625D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
-	        		new AxisAlignedBB(0.6875D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
-	        		new AxisAlignedBB(0.8125D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D)}
-	        		[((Integer)state.getValue(BITES)).intValue()];
-			
-			case "carrot_cake":
-				return new AxisAlignedBB[] {
-	        		new AxisAlignedBB(0.0625D, 0D, 0.0625D, 0.9375D, 0.5625D, 0.9375D),
-	        		new AxisAlignedBB(0.3125D, 0D, 0.0625D, 0.9375D, 0.5625D, 0.9375D),
-	        		new AxisAlignedBB(0.5625D, 0D, 0.0625D, 0.9375D, 0.5625D, 0.9375D),
-	        		new AxisAlignedBB(0.8125D, 0D, 0.0625D, 0.9375D, 0.5625D, 0.9375D)}
-	        		[((Integer)state.getValue(BITES)).intValue()];
-			
-			case "paris_brest":
-				return new AxisAlignedBB[] {
-	        		new AxisAlignedBB(0.0625D, 0D, 0D, 1D, 0.3125D, 1D),
-	        		new AxisAlignedBB(0.3125D, 0D, 0D, 1D, 0.3125D, 1D),
-	        		new AxisAlignedBB(0.5625D, 0D, 0D, 1D, 0.3125D, 1D)}
-	        		[((Integer)state.getValue(BITES)).intValue()];
-			
-			case "muffins":
-				return new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.1875D, 0.9375D);
-			
-			case "hamburger":
-				return new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.375D, 0.75D);
-			
-			default:
-				return new AxisAlignedBB[] {
-					new AxisAlignedBB(0.0625D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D), 
-					new AxisAlignedBB(0.1875D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D),
-					new AxisAlignedBB(0.3125D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D), 
-					new AxisAlignedBB(0.4375D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D), 
-					new AxisAlignedBB(0.5625D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D), 
-					new AxisAlignedBB(0.6875D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D), 
-					new AxisAlignedBB(0.8125D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D)}
-					[((Integer)state.getValue(BITES)).intValue()];
+		if(cake == "basque_cake" || cake == "cheese_cake" || cake == "spiced_cake"){
+			return new AxisAlignedBB(0.0625D, 0D, 0.0625D, 0.9375D, 0.3125D, 0.9375D);
 		}
+
+		if(cake == "brownie" || cake == "chocolate_mousse"){
+			return new AxisAlignedBB[] {
+	    		new AxisAlignedBB(0.0625D, 0D, 0.0625D, 0.9375D, 0.25D, 0.9375D),
+	    		new AxisAlignedBB(0.3125D, 0D, 0.0625D, 0.9375D, 0.25D, 0.9375D),
+	    		new AxisAlignedBB(0.6875D, 0D, 0.0625D, 0.9375D, 0.25D, 0.9375D)}
+	    		[((Integer)state.getValue(BITES)).intValue()];
+		}
+
+		if(cake == "sandy_cake"){
+			return new AxisAlignedBB(0.3125D, 0D, 0.3125D, 0.6875D, 0.0625D, 0.6875D);
+		}
+		
+		if(cake == "nordic_cake"){
+			return new AxisAlignedBB[] {
+        		new AxisAlignedBB(0.0625D, 0D, 0.3125D, 0.9375D, 0.25D, 0.6875D),
+        		new AxisAlignedBB(0.3125D, 0D, 0.3125D, 0.9375D, 0.25D, 0.6875D),
+        		new AxisAlignedBB(0.6875D, 0D, 0.3125D, 0.9375D, 0.25D, 0.6875D)}
+        		[((Integer)state.getValue(BITES)).intValue()];
+		}
+		
+		if(cake == "chocolate_roll"){
+			return new AxisAlignedBB[] {
+        		new AxisAlignedBB(0.0625D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
+        		new AxisAlignedBB(0.1875D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
+        		new AxisAlignedBB(0.3125D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
+        		new AxisAlignedBB(0.4375D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
+        		new AxisAlignedBB(0.5625D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
+        		new AxisAlignedBB(0.6875D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D),
+        		new AxisAlignedBB(0.8125D, 0D, 0.25D, 0.9375D, 0.4375D, 0.75D)}
+        		[((Integer)state.getValue(BITES)).intValue()];
+		}
+		
+		if(cake == "carrot_cake"){
+			return new AxisAlignedBB[] {
+        		new AxisAlignedBB(0.0625D, 0D, 0.0625D, 0.9375D, 0.5625D, 0.9375D),
+        		new AxisAlignedBB(0.3125D, 0D, 0.0625D, 0.9375D, 0.5625D, 0.9375D),
+        		new AxisAlignedBB(0.5625D, 0D, 0.0625D, 0.9375D, 0.5625D, 0.9375D),
+        		new AxisAlignedBB(0.8125D, 0D, 0.0625D, 0.9375D, 0.5625D, 0.9375D)}
+        		[((Integer)state.getValue(BITES)).intValue()];
+		}
+		
+		if(cake == "paris_brest"){
+			return new AxisAlignedBB[] {
+        		new AxisAlignedBB(0.0625D, 0D, 0D, 1D, 0.3125D, 1D),
+        		new AxisAlignedBB(0.3125D, 0D, 0D, 1D, 0.3125D, 1D),
+        		new AxisAlignedBB(0.5625D, 0D, 0D, 1D, 0.3125D, 1D)}
+        		[((Integer)state.getValue(BITES)).intValue()];
+		}
+		
+		if(cake == "muffins"){
+			return new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.1875D, 0.9375D);
+		}
+		
+		if(cake == "hamburger"){
+			return new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.375D, 0.75D);
+		}
+
+		return new AxisAlignedBB[] {
+			new AxisAlignedBB(0.0625D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D), 
+			new AxisAlignedBB(0.1875D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D),
+			new AxisAlignedBB(0.3125D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D), 
+			new AxisAlignedBB(0.4375D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D), 
+			new AxisAlignedBB(0.5625D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D), 
+			new AxisAlignedBB(0.6875D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D), 
+			new AxisAlignedBB(0.8125D, 0D, 0.0625D, 0.9375D, 0.5D, 0.9375D)}
+			[((Integer)state.getValue(BITES)).intValue()];
     }
 	
 	@SideOnly(Side.CLIENT)
@@ -142,209 +147,141 @@ public class BlockMultipleCake extends Block {
     }
     
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-    	this.eatCake(worldIn, pos, state, playerIn);
+    	if(playerIn.canEat(false)){
+    		this.eatCake(worldIn, pos, state, playerIn);
+	    }
         System.out.println("info Cake "+cake+" - Bite : "+((Integer)state.getValue(BITES)).intValue());
         return true;
     }
-
+    
+    
+    
     private void eatCake(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
-		if(player.canEat(false)){
-			if(cake == "trapped_cake"){
-	    		if(!world.isRemote){
-	    			world.createExplosion(player, pos.getX(), pos.getY(), pos.getZ(), 4F, true);
-	    			player.attackEntityFrom(DamageSource.causeExplosionDamage(player), Float.MAX_VALUE);
-	    			player.addStat(CommonProxy.deathCake, 1);
-	    		}
-	    	}
-			else if(cake == "chocolate_cake" || cake == "apple_cake" || cake == "gold_cake"){
-	    		if(cake == "gold_cake"){
-	    			player.heal(5F);
-	    			player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 600, 4));
-	    		}
-	    		player.heal(2F);
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 2;
-		
-		        if (i >= 6){ world.setBlockToAir(pos); }
-		        else{ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "poisoned_cake"){
-	    		player.addPotionEffect(new PotionEffect(MobEffects.POISON, 300, 0));
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 1;
-		
-		        if (i >= 6){ world.setBlockToAir(pos); }
-		        else{ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "lava_cake"){
-	    		player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 1800, 4));
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 3;
-		
-		        if (i >= 6){ world.setBlockToAir(pos); }
-		        else{ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "basque_cake" || cake == "brownie"){
-	    		player.getFoodStats().addStats(3, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 2;
-		
-		        if (i >= 6){ world.setBlockToAir(pos); }
-		        else{ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "redstone_cake"){
-	    		player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 350, 4));
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 1;
-		
-		        if (i >= 6){ world.setBlockToAir(pos); }
-		        else{ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "chocolate_mousse"){
-	    		player.getFoodStats().addStats(1, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 3;
-		
-		        if (i >= 6){ world.setBlockToAir(pos); }
-		        else{ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "ender_cake"){
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue();
-		
-		        if (i >= 6){ world.setBlockToAir(pos); }
-		        else{ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 3)), 3); }
-		        
-		        
-		        if (!world.isRemote){
-		        	if (player != null && player instanceof EntityPlayerMP){
-		                EntityPlayerMP entityplayermp = (EntityPlayerMP)player;
-	
-		                if (entityplayermp.worldObj == world){
-		                	double posx[] = {(double) (Math.random()*(300-30)), (double) 0 - (Math.random()*(300-30))};
-		                	double posz[] = {(double) (Math.random()*(300-30)), (double) 0 - (Math.random()*(300-30))};
-		                	
-		                    EnderTeleportEvent event = new EnderTeleportEvent(entityplayermp, pos.getX() + posx[(int)(Math.random()*(1-0+1))+0], pos.getY() + Math.random()*(15-5), pos.getZ() + posz[(int)(Math.random()*(1-0+1))+0], 5.0F);
-		                    if (!MinecraftForge.EVENT_BUS.post(event)){ 
-			                    if (player.isRiding()){
-			                    	player.dismountRidingEntity();
-			                    }
-			                    player.setPositionAndUpdate(event.getTargetX(), event.getTargetY(), event.getTargetZ());
-			                    world.setBlockToAir(player.getPosition());
-			                    world.setBlockToAir(new BlockPos(player.posX, player.posY+1, player.posZ));
-			                    player.fallDistance = 0.0F;
-		                    }
-		                }
-		            }
-		        }
-		    }
-		    else if(cake == "pumpkin_cake"){
-	    		player.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, 50, 4));
-	    		player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 600, 4));
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 1;
-		
-		        if (i >= 6){  world.setBlockToAir(pos); }
-		        else{  world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "spiced_cake"){
-	    		player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 400, 4));
-	    		player.addPotionEffect(new PotionEffect(MobEffects.HUNGER, 600, 4));
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 1;
-		
-		        if (i >= 6){  world.setBlockToAir(pos); }
-		        else{  world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "sandy_cake"){
-	    		player.jump();
-	    		player.addPotionEffect(new PotionEffect(CommonProxy.potionSandy, 200, 4));
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 1;
-		
-		        if (i >= 1){  world.setBlockToAir(pos); }
-		        else{  world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "stars_cake"){
-	    		if(!world.isRemote){
-	    			player.addExperience(150);
-	    		}
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 1;
-		
-		        if (i >= 6){  world.setBlockToAir(pos); }
-		        else{  world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "watermelon_cake"){
-		    	if(!world.isRemote){
-		    		player.dropItem(Items.MELON_SEEDS, 1);
-		    	}
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 1;
-		
-		        if (i >= 6){  world.setBlockToAir(pos); }
-		        else{  world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "nordic_cake"){
-	    		player.addPotionEffect(new PotionEffect(CommonProxy.potionNordic, 800, 4));
-	    		player.getFoodStats().addStats(1, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 2;
-		
-		        if (i >= 6){  world.setBlockToAir(pos); }
-		        else{  world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "anniversary_cake"){
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 1;
-		
-		        if (i >= 6){ 
-		        	player.addPotionEffect(new PotionEffect(CommonProxy.potionCreep, 600, 4));
-		        	world.setBlockToAir(pos); 
-		        }
-		        else{ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "hamburger"){
-	    		player.getFoodStats().addStats(6, 0.1F);
-		
-		        world.setBlockToAir(pos);
-		    }
-		    else if(cake == "carrot_cake"){
-	    		player.getFoodStats().addStats(4, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 1;
-		
-		        if (i >= 6){  world.setBlockToAir(pos); }
-		        else{  world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "muffins"){
-	    		player.getFoodStats().addStats(2, 0.1F);
-	    		int i = ((Integer)state.getValue(BITES)).intValue() + 2;
-		
-		        if (i >= 6){ world.setBlockToAir(pos); }
-		        else{ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2); }
-		    }
-		    else if(cake == "paris_brest"){
-		    	player.getFoodStats().addStats(2, 0.1F);
-		    	int i = ((Integer)state.getValue(BITES)).intValue();
-		    	if (i >= 2){ world.setBlockToAir(pos); }
-		        else{ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i+1)), 2); }
-		    }
-		    else if(cake == "slime_cake"){
-		    	player.getFoodStats().addStats(2, 0.1F);
-		    	int i = ((Integer)state.getValue(BITES)).intValue() + 3;
-		    	player.addPotionEffect(new PotionEffect(CommonProxy.potionSlime, 600, 4));
-		    	if (i >= 6){ world.setBlockToAir(pos); }
-		        else{ 
-		        	world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i)), 2); 
-		        }
-		    }
-		    else{
-	    		player.getFoodStats().addStats(2, 0.1F);
-	            int i = ((Integer)state.getValue(BITES)).intValue();
-
-	            if (i < 6){
-	                world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(i + 1)), 2);
-	            }
-	            else{world.setBlockToAir(pos);}
-		    }
+        int actualState = ((Integer)state.getValue(BITES)).intValue();
+        
+    	if(cake == "chocolate_cake" || cake == "apple_cake" || cake == "gold_cake"){
+    		if(cake == "gold_cake"){
+    			player.heal(5F);
+    			player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 600, 4));
+    		}
+    		player.heal(2F);
+    		player.getFoodStats().addStats(2, 0.1F);  
 	    }
+
+    	if(cake == "trapped_cake"){
+    		if(!world.isRemote){
+    			world.createExplosion(player, pos.getX(), pos.getY(), pos.getZ(), 4F, true);
+    			player.attackEntityFrom(DamageSource.causeExplosionDamage(player), Float.MAX_VALUE);
+    			player.addStat(CommonProxy.deathCake, 1);
+    		}
+    	}
+
+    	if(cake == "poisoned_cake"){
+    		player.addPotionEffect(new PotionEffect(MobEffects.POISON, 300, 0));
+    		player.getFoodStats().addStats(2, 0.1F);
+	    }
+
+    	if(cake == "lava_cake"){
+    		player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 1800, 4));
+    		player.getFoodStats().addStats(2, 0.1F);
+	    }
+
+    	if(cake == "basque_cake" || cake == "brownie"){
+    		player.getFoodStats().addStats(3, 0.1F);
+	    }
+
+    	if(cake == "redstone_cake"){
+    		player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 350, 4));
+    		player.getFoodStats().addStats(2, 0.1F);
+	    }
+
+    	if(cake == "chocolate_mousse"){
+    		player.getFoodStats().addStats(1, 0.1F);
+    	}
+    	
+    	if(cake == "ender_cake"){
+    		player.getFoodStats().addStats(2, 0.1F);
+    		if(!world.isRemote){
+	        	if(player != null && player instanceof EntityPlayerMP){
+	                EntityPlayerMP entityplayermp = (EntityPlayerMP)player;
+	                if (entityplayermp.worldObj == world){
+	                	double posx[] = {(double) (Math.random()*(300-30)), (double) 0 - (Math.random()*(300-30))};
+	                	double posz[] = {(double) (Math.random()*(300-30)), (double) 0 - (Math.random()*(300-30))};
+	                    EnderTeleportEvent event = new EnderTeleportEvent(entityplayermp, pos.getX() + posx[(int)(Math.random()*(1-0+1))+0], pos.getY() + Math.random()*(15-5), pos.getZ() + posz[(int)(Math.random()*(1-0+1))+0], 5.0F);
+	                    if(!MinecraftForge.EVENT_BUS.post(event)){ 
+		                    if (player.isRiding()){
+		                    	player.dismountRidingEntity();
+		                    }
+		                    player.setPositionAndUpdate(event.getTargetX(), event.getTargetY(), event.getTargetZ());
+		                    world.setBlockToAir(player.getPosition());
+		                    world.setBlockToAir(new BlockPos(player.posX, player.posY+1, player.posZ));
+		                    player.fallDistance = 0.0F;
+	                    }
+	                }
+	            }
+	        }
+    	}
+    	
+    	if(cake == "pumpkin_cake"){
+    		player.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, 50, 4));
+    		player.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 600, 4));
+    		player.getFoodStats().addStats(2, 0.1F);
+    	}
+    	
+    	if(cake == "spiced_cake"){
+    		player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 400, 4));
+    		player.addPotionEffect(new PotionEffect(MobEffects.HUNGER, 600, 4));
+    		player.getFoodStats().addStats(2, 0.1F);
+    	}
+    	
+    	if(cake == "sandy_cake"){
+    		player.jump();
+    		player.addPotionEffect(new PotionEffect(CommonProxy.potionSandy, 200, 4));
+    		player.getFoodStats().addStats(2, 0.1F);
+    	}
+    	
+    	if(cake == "stars_cake"){
+    		if(!world.isRemote){ player.addExperience(150); }
+    		player.getFoodStats().addStats(2, 0.1F);
+	    }
+	    
+    	if(cake == "watermelon_cake"){
+	    	if(!world.isRemote){ player.dropItem(Items.MELON_SEEDS, 1); }
+    		player.getFoodStats().addStats(2, 0.1F);
+	    }
+	    
+    	if(cake == "nordic_cake"){
+    		player.addPotionEffect(new PotionEffect(CommonProxy.potionNordic, 800, 4));
+    		player.getFoodStats().addStats(1, 0.1F);
+	    }
+	    
+    	if(cake == "anniversary_cake"){
+    		player.getFoodStats().addStats(2, 0.1F);	
+	        if (actualState < parts){ 
+	        	player.addPotionEffect(new PotionEffect(CommonProxy.potionCreep, 600, 4));
+	        }
+	    }
+	    
+    	if(cake == "hamburger"){
+    		player.getFoodStats().addStats(6, 0.1F);
+	    }
+    	
+    	if(cake == "carrot_cake"){
+    		player.getFoodStats().addStats(4, 0.1F);
+	    }
+	    
+    	if(cake == "slime_cake"){
+	    	player.getFoodStats().addStats(2, 0.1F);
+	    	player.addPotionEffect(new PotionEffect(CommonProxy.potionSlime, 600, 4));
+	    }
+    	
+    	if(cake == "muffins" || cake == "paris_brest" || cake == "cheese_cake" || cake == "cookies_cake"){
+    		player.getFoodStats().addStats(2, 0.1F);
+	    }
+    	
+    	
+    	if (actualState < parts){ world.setBlockState(pos, state.withProperty(BITES, Integer.valueOf(actualState + 1)), 3); }
+        else{ world.setBlockToAir(pos); }
 	}
 	
 	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
