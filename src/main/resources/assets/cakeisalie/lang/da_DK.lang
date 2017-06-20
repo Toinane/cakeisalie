@@ -1,0 +1,118 @@
+/**
+ * @version 5.1.1
+ * @author Toinane.
+ *
+ * Custom name for : CakeIsALie mod.
+ */
+
+tile.Chocolate_cake.name=Chokoladekage
+tile.Apple_cake.name=Æblekage
+tile.Gold_cake.name=Gylden Æblekage
+tile.Trapped_cake.name=Fanget kage
+tile.Poisoned_cake.name=Forgiftet kage
+tile.Lava_cake.name=Lava kage
+tile.Basque_cake.name=Basque kage
+tile.Redstone_cake.name=Rødstenskage
+tile.Brownie.name=Brownie
+tile.Chocolate_mousse.name=Chokolademousse
+tile.Cookies_cake.name=Kiksekage
+tile.Ender_cake.name=Enderkage
+tile.Pumpkin_cake.name=Græskarkage
+tile.Spiced_cake.name=Kryderkage
+tile.Sandy_cake.name=Sandkage
+tile.Stars_cake.name=Stjernekage
+tile.Water-melon_cake.name=Vandmelonskage
+tile.Nordic_cake.name=Nordisk kage
+tile.Anniversary_cake.name=Jubilæumskage
+tile.Paris_brest.name=Pariserkrans
+tile.Hamburger.name=Hamburger
+tile.Cheese_cake.name=Ostekage
+tile.Chocolate_roll.name=Chokolade roulade
+tile.Carrot_cake.name=Gulerodskage
+tile.Slime_cake.name=Slimet kage
+tile.Muffins.name=Muffins
+
+item.Chocolate_cake.name=Chokoladekage
+item.Apple_cake.name=Æblekage
+item.Gold_cake.name=Gylden Æblekage
+item.Trapped_cake.name=Fanget kage
+item.Poisoned_cake.name=Forgiftet kage
+item.Lava_cake.name=Lava kage
+item.Basque_cake.name=Basque kage
+item.Redstone_cake.name=Rødstenskage
+item.Brownie.name=Brownie
+item.Chocolate_mousse.name=Chokolademousse
+item.Cookies_cake.name=Kiksekage
+item.Ender_cake.name=Enderkage
+item.Pumpkin_cake.name=Græskarkage
+item.Spiced_cake.name=Kryderkage
+item.Sandy_cake.name=Sandkage
+item.Stars_cake.name=Stjernekage
+item.Water-melon_cake.name=Vandmelonskage
+item.Nordic_cake.name=Nordisk kage
+item.Anniversary_cake.name=Jubilæumskage
+item.Paris_brest.name=Pariserkrans
+item.Hamburger.name=Hamburger
+item.Cheese_cake.name=Ostekage
+item.Chocolate_roll.name=Chokolade roulade
+item.Carrot_cake.name=Gulerodskage
+item.Slime_cake.name=Slimet kage
+item.Muffins.name=Muffins
+item.unknow=Ukendt
+
+item.Hunger_potion.name=Sult eliksir
+item.Sandy_potion.name=Sand eliksir
+item.Nordic_potion.name=Nordisk eliksir
+item.Creep_potion.name=Kamikaze eliksir
+item.Slime_potion.name=Slimet eliksir
+item.Hunger_splash_potion=Sprøjtende sult eliksir
+item.Sandy_splash_potion.name=Sprøjtende sand eliksir
+item.Nordic_splash_potion.name=Sprøjtende nordisk eliksir
+item.Creep_splash_potion.name=Sprøjtende kamikaze eliksir
+item.Slime_splash_potion.name=Sprøjtende slimet eliksir
+
+potion.Sandy_potion=Kvælning
+potion.Nordic_potion=Frysende
+potion.Creep_potion=Kamikaze!
+potion.Slime_potion=Slimet!
+
+itemGroup.cakeTab=CakeIsALie
+
+achievement.First=Chokoladekage
+achievement.First.desc=Den første af en lang liste
+achievement.Creep=Creeper paradoks
+achievement.Creep.desc=Eksploder en Creeper som en Creeper!
+achievement.Poisonous=Kagernes onde ansigt
+achievement.Poisonous.desc=Bliv ond
+achievement.Trapped=Fang mennesker omkring dig
+achievement.Trapped.desc=Lav en fanget kage
+achievement.Death=Fanget!
+achievement.Death.desc=Kagen er en løgn. Virkelig.
+achievement.Anniv=Creeperens magt
+achievement.Anniv.desc=Det er ikke en rigtig kage..
+achievement.Apple=Æblekage
+achievement.Apple.desc=Lav en æblekage
+achievement.Watermelon=Vandmelonskage
+achievement.Watermelon.desc=Vandmelons certificeret frø!
+achievement.AppleGold=Gylden Æblekage
+achievement.AppleGold.desc=Lav en gylden æblekage
+achievement.Pumpkin=Græskarkage
+achievement.Pumpkin.desc=Lav en græskar kage
+achievement.Spiced=Kryderkage
+achievement.Spiced.desc=Lav en kryderkage
+achievement.Stars=Erfaringskage?
+achievement.Stars.desc=Lav en stjernekage
+achievement.Redstone=Rødstens.. Kage
+achievement.Redstone.desc=Få magten af rødsten!
+achievement.Lava=Lava kage
+achievement.Lava.desc=Lava vil være som vand nu
+achievement.Nordic=Nordisk kage
+achievement.Nordic.desc=Lav den frosne kage
+achievement.WaterIced=Vær som is
+achievement.WaterIced.desc=Løb en lang afstand på vand
+achievement.Roll=Chokolade roulade
+achievement.Roll.desc=Rock og rul!
+achievement.Sandy=Den lille sandkage
+achievement.Sandy.desc=Lav en sandkage
+achievement.Suffocation=Bøvs sand ud
+achievement.Suffocation.desc=Bøvs sand ud i et langt stykke

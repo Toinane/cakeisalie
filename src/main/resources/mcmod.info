@@ -1,0 +1,16 @@
+[
+{
+  "modid": "cakeisalie",
+  "name": "CakeIsALie Mod",
+  "description": "Add a lot of new cool cakes!",
+  "version": "6.0.0",
+  "mcversion": "${mcversion}",
+  "url": "https://crea-th.at/p/cakeisalie",
+  "updateUrl": "https://crea-th.at/p/cakeisalie",
+  "authorList": ["Toinane"],
+  "credits": "Thanks to Ryunako, my alpha tester. And to Bas_nwl, Rayu, Sokiane, and Hanabi for their translations!",
+  "logoFile": "assets/cakeisalie/CakeIsALie.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,118 @@
+/**
+ * @version 5.1.1
+ * @author Toinane.
+ *
+ * Custom name for : CakeIsALie mod.
+ */
+
+tile.Chocolate_cake.name=Schokoladenkuchen
+tile.Apple_cake.name=Apfelkuchen
+tile.Gold_cake.name=Goldener Apfelkuchen
+tile.Trapped_cake.name=Trickuchen
+tile.Poisoned_cake.name=Vergifteter Kuchen
+tile.Lava_cake.name=Lavakuchen
+tile.Basque_cake.name=Baskischer Kuchen
+tile.Redstone_cake.name=Redstonekuchen
+tile.Brownie.name=Brownie
+tile.Chocolate_mousse.name=Mousse au chocolat
+tile.Cookies_cake.name=Cookiekuchen
+tile.Ender_cake.name=Enderkuchen
+tile.Pumpkin_cake.name=Kürbiskuchen
+tile.Spiced_cake.name=Gewürzkuchen
+tile.Sandy_cake.name=Sandkuchen
+tile.Stars_cake.name=Sternkuchen
+tile.Water-melon_cake.name=Wassermelonenkuchen
+tile.Nordic_cake.name=Nordischer Kuchen
+tile.Anniversary_cake.name=Geburtstagskuchen
+tile.Paris_brest.name=Paris-Brest
+tile.Hamburger.name=Hamburger
+tile.Cheese_cake.name=Käsekuchen
+tile.Chocolate_roll.name=Schokoladenrolle
+tile.Carrot_cake.name=Karrottenkuchen
+tile.Slime_cake.name=Schleimkuchen
+tile.Muffins.name=Muffins
+
+item.Chocolate_cake.name=Schokoladenkuchen
+item.Apple_cake.name=Apfelkuchen
+item.Gold_cake.name=Goldener Apfelkuchen
+item.Trapped_cake.name=Trickuchen
+item.Poisoned_cake.name=Vergifteter Kuchen
+item.Lava_cake.name=Lavakuchen
+item.Basque_cake.name=Baskischer Kuchen
+item.Redstone_cake.name=Redstonekuchen
+item.Brownie.name=Brownie
+item.Chocolate_mousse.name=Mousse au chocolat
+item.Cookies_cake.name=Cookiekuchen
+item.Ender_cake.name=Enderkuchen
+item.Pumpkin_cake.name=Kürbiskuchen
+item.Spiced_cake.name=Gewürzkuchen
+item.Sandy_cake.name=Sandkuchen
+item.Stars_cake.name=Sternkuchen
+item.Water-melon_cake.name=Wassermelonenkuchen
+item.Nordic_cake.name=Nordischer Kuchen
+item.Anniversary_cake.name=Geburtstagskuchen
+item.Paris_brest.name=Paris-Brest
+item.Hamburger.name=Hamburger
+item.Cheese_cake.name=Käsekuchen
+item.Chocolate_roll.name=Schokoladenrolle
+item.Carrot_cake.name=Karrottenkuchen
+item.Slime_cake.name=Schleimkuchen
+item.Muffins.name=Muffins
+item.unknow=Unbekannt
+
+item.Hunger_potion.name=Trank des Hungers
+item.Sandy_potion.name=Trank des Sandes
+item.Nordic_potion.name=Trank des Nordens
+item.Creep_potion.name=Trank des Kamikazes
+item.Slime_potion.name=Schleimtrank
+item.Hunger_splash_potion=Wurftrank des Hungers
+item.Sandy_splash_potion.name=Wurftrank des Sandes
+item.Nordic_splash_potion.name=Wurftrank des Nordens
+item.Creep_splash_potion.name=Wurftrank des Kamikazes
+item.Slime_splash_potion.name=Wurftrank des Schleimes
+
+potion.Sandy_potion=Ersticken
+potion.Nordic_potion=Frost
+potion.Creep_potion=Kamikaze!
+potion.Slime_potion=Schleim!
+
+itemGroup.cakeTab=CakeIsALie
+
+achievement.First=Schokoladenkuchen
+achievement.First.desc=Das Erste aus einer langen Liste
+achievement.Creep=Creeper Paradox
+achievement.Creep.desc=Sprenge den Creeper like a Creeper!
+achievement.Poisonous=Die Böse Seite der Kuchen
+achievement.Poisonous.desc=Werde zu dem Bösen
+achievement.Trapped=Lege die Leute in deinem Umfeld herein
+achievement.Trapped.desc=Crafte einen Trickuchen
+achievement.Death=Reingelegt!
+achievement.Death.desc=Der Kuchen ist eine Lüge. Wirklich.
+achievement.Anniv=Die Macht des Creepers
+achievement.Anniv.desc=Das ist kein echter Kuchen..
+achievement.Apple=Apfelkuchen
+achievement.Apple.desc=Crafte einen Apfelkuchen
+achievement.Watermelon=Wassermelonenkuchen
+achievement.Watermelon.desc=Zertifizierte Wassermelonensamen!
+achievement.AppleGold=Goldener Apfelkuchen
+achievement.AppleGold.desc=Crafte einen goldenen Apfelkuchen
+achievement.Pumpkin=Kürbiskuchen
+achievement.Pumpkin.desc=Crafte einen Kürbiskuchen
+achievement.Spiced=Gewürzkuchen
+achievement.Spiced.desc=Crafte einen Gewürzkuchen
+achievement.Stars=XP-Kuchen?
+achievement.Stars.desc=Crafte einen Sternkuchen
+achievement.Redstone=Redstone.. Kuchen
+achievement.Redstone.desc=Erhalte die Kraft des Redstones!
+achievement.Lava=Lavakuchen
+achievement.Lava.desc=Lava wird jetzt wie Wasser sein
+achievement.Nordic=Nordischer Kuchen
+achievement.Nordic.desc=Crafte einen nordischen Kuchen
+achievement.WaterIced=Sei wie das Eis
+achievement.WaterIced.desc=Laufe eine lange Strecke auf dem Wasser
+achievement.Roll=Schokoladenrolle
+achievement.Roll.desc=Rock 'n' Roll!
+achievement.Sandy=Der Kleine aus dem Sandkasten
+achievement.Sandy.desc=Crafte einen Sandkuchen
+achievement.Suffocation=Spucke Sand aus
+achievement.Suffocation.desc=Spucke Sand für einen langen Moment aus
