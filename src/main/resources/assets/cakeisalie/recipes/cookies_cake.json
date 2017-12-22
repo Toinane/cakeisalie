@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AAA",
+        "ABA",
+        "CCC"
+    ],
+    "key": {
+        "A": { "item": "minecraft:cookie" },
+        "B": { "item": "minecraft:egg" },
+        "C": { "item": "minecraft:wheat" }
+    },
+    "result": {
+        "item": "cakeisalie:cookies_cake",
+        "count": 1
+    }
+}

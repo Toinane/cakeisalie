@@ -78,6 +78,11 @@ potion.slime_potion=Slimy!
 
 itemGroup.cake_tab=CakeIsALie
 
+advancements.cakeisalie.root.title=CakeIsALie
+advancements.cakeisalie.root.description=CakeIsALie mod by Toinane
+advancements.cakeisalie.apple_cake.title=Apple Cake
+advancements.cakeisalie.apple_cake.description=The first of a long list
+
 achievement.First=Chocolate Cake
 achievement.First.desc=The first of a long list
 achievement.Creep=Creeper Paradox

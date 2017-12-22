@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "cakeisalie:anniversary_cake"
+        },
+        "title": {
+            "translate": "advancements.cakeisalie.root.title"
+        },
+        "description": {
+            "translate": "advancements.cakeisalie.root.description"
+        },
+        "background": "minecraft:textures/blocks/hay_block_top.png",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "crafting_table": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "cakeisalie:apple_cake"
+                    }
+                ]
+            }
+        }
+    }
+}

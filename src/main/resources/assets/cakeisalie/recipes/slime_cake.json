@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AAA",
+        "A A",
+        "BBB"
+    ],
+    "key": {
+        "A": { "item": "minecraft:slime_ball" },
+        "B": { "item": "minecraft:wheat" }
+    },
+    "result": {
+        "item": "cakeisalie:slime_cake",
+        "count": 1
+    }
+}

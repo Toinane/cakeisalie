@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AA",
+        "AB"
+    ],
+    "key": {
+        "A": {
+            "item": "minecraft:sandstone",
+            "data": 0
+        },
+        "B": { "item": "minecraft:egg" }
+    },
+    "result": {
+        "item": "cakeisalie:sandy_cake",
+        "count": 1
+    }
+}
