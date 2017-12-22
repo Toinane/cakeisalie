@@ -1,4 +1,4 @@
-# CakeIsALie Mod v6.0.0 - MC 1.9.4
+# CakeIsALie Mod v6.0.0 - MC 1.12.2
 CakeIsALie Mod - Minecraft
 
 Releases & informations on website -> https://crea-th.at/p/cakeisalie/
