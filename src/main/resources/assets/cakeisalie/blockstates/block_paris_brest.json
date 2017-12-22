@@ -1,0 +1,12 @@
+{
+	"forge_marker": 1,
+    "variants": {
+        "bites=0": { "model": "cakeisalie:paris_brest" },
+        "bites=1": { "model": "cakeisalie:paris_brest2" },
+        "bites=2": { "model": "cakeisalie:paris_brest3" },
+        "bites=3": { "model": "cakeisalie:paris_brest" },
+        "bites=4": { "model": "cakeisalie:paris_brest" },
+        "bites=5": { "model": "cakeisalie:paris_brest" },
+        "bites=6": { "model": "cakeisalie:paris_brest" }
+    }
+}

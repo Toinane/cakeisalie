@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AAA",
+        "BCB",
+        "DDD"
+    ],
+    "key": {
+        "A": { "item": "minecraft:ender_pearl" },
+        "B": { "item": "minecraft:sugar" },
+        "C": { "item": "minecraft:egg" },
+        "D": { "item": "minecraft:wheat" }
+    },
+    "result": {
+        "item": "cakeisalie:ender_cake",
+        "count": 1
+    }
+}

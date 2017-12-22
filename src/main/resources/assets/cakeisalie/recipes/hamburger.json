@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "A ",
+        "BA"
+    ],
+    "key": {
+        "A": {
+            "item": "minecraft:beef",
+            "data": 0
+        },
+        "B": { "item": "minecraft:wheat" }
+    },
+    "result": {
+        "item": "cakeisalie:hamburger",
+        "count": 1
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "cakeisalie:apple_cake"
+        },
+        "title": {
+            "translate": "advancements.cakeisalie.apple_cake.title"
+        },
+        "description": {
+            "translate": "advancements.cakeisalie.apple_cake.description"
+        }
+    },
+    "parent": "cakeisalie:cakeisalie/root",
+    "criteria": {
+        "crafting_table": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "cakeisalie:apple_cake"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AAA",
+        "BCB",
+        "DDD"
+    ],
+    "key": {
+        "A": { "item": "minecraft:lava_bucket" },
+        "B": { "item": "minecraft:blaze_powder" },
+        "C": { "item": "minecraft:magma_cream" },
+        "D": { "item": "minecraft:wheat" }
+    },
+    "result": {
+        "item": "cakeisalie:lava_cake",
+        "count": 1
+    }
+}

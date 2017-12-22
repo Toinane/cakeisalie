@@ -1,0 +1,12 @@
+{
+	"forge_marker": 1,
+    "variants": {
+        "bites=0": { "model": "cakeisalie:lava_cake" },
+		"bites=1": { "model": "cakeisalie:lava_cake4" },
+		"bites=2": { "model": "cakeisalie:lava_cake" },
+		"bites=3": { "model": "cakeisalie:lava_cake" },
+        "bites=4": { "model": "cakeisalie:lava_cake" },
+		"bites=5": { "model": "cakeisalie:lava_cake" },
+		"bites=6": { "model": "cakeisalie:lava_cake" }
+    }
+}

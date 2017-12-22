@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AAA",
+        "BCB",
+        "DDD"
+    ],
+    "key": {
+        "A": { "item": "minecraft:sugar" },
+        "B": { "item": "minecraft:fermented_spider_eye" },
+        "C": { "item": "minecraft:blaze_powder" },
+        "D": { "item": "minecraft:wheat" }
+    },
+    "result": {
+        "item": "cakeisalie:spiced_cake",
+        "count": 1
+    }
+}

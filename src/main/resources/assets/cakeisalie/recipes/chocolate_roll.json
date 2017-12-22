@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AAA",
+        "ABA",
+        "AAA"
+    ],
+    "key": {
+        "A": {
+            "item": "minecraft:dye",
+            "data": 3
+        },
+        "B": { "item": "minecraft:milk_bucket" }
+    },
+    "result": {
+        "item": "cakeisalie:chocolate_roll",
+        "count": 1
+    }
+}

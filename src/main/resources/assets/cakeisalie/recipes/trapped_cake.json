@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AAA",
+        "BCB",
+        "DDD"
+    ],
+    "key": {
+        "A": { "item": "minecraft:milk_bucket" },
+        "B": { "item": "minecraft:sugar" },
+        "C": { "item": "minecraft:tnt" },
+        "D": { "item": "minecraft:wheat" }
+    },
+    "result": {
+        "item": "cakeisalie:trapped_cake",
+        "count": 1
+    }
+}

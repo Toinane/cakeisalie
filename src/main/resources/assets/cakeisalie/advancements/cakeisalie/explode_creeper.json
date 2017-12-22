@@ -1,0 +1,25 @@
+{
+    "display": {
+        "icon": { "item": "cakeisalie:anniversary_cake" },
+        "title": { "translate": "advancements.cakeisalie.explode_creeper.title" },
+        "description": { "translate": "advancements.cakeisalie.explode_creeper.description" },
+        "frame": "challenge"
+    },
+    "parent": "cakeisalie:cakeisalie/root",
+    "criteria": {
+        "crafting_table": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "creeper"
+                },
+                "killing_blow": {
+                    "is_explosion": true
+                }
+            }
+        }
+    },
+    "rewards": {
+        "experience": 30
+    }
+}

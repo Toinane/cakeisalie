@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "A ",
+        "BB"
+    ],
+    "key": {
+        "A": { "item": "minecraft:egg" },
+        "B": { "item": "minecraft:wheat" }
+    },
+    "result": {
+        "item": "cakeisalie:muffins",
+        "count": 1
+    }
+}
