@@ -80,20 +80,20 @@ public class EntityCakePotion extends EntityThrowable
     
     protected void onImpact(RayTraceResult result)
     {
-        if (!this.worldObj.isRemote)
+        if (!this.world.isRemote)
         {
             int list = Items.POTIONITEM.getDamage(new ItemStack(Items.POTIONITEM, 1, 0));
 
             if (list != 0)
             {
                 AxisAlignedBB axisalignedbb = this.getEntityBoundingBox().expand(4.0D, 2.0D, 4.0D);
-                List<EntityLivingBase> list1 = this.worldObj.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, axisalignedbb);
+                List<EntityLivingBase> list1 = this.world.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, axisalignedbb);
 
                 if (!list1.isEmpty())
                 {
                     for (EntityLivingBase entitylivingbase : list1)
                     {
-                        double d0 = this.getDistanceSqToEntity(entitylivingbase);
+                        double d0 = this.getDistanceSq(entitylivingbase);
 
                         if (d0 < 16.0D)
                         {
@@ -133,7 +133,7 @@ public class EntityCakePotion extends EntityThrowable
                     }
                 }
             }
-            this.worldObj.playEvent(2002, new BlockPos(this), list);
+            this.world.playEvent(2002, new BlockPos(this), list);
             this.setDead();
         }
     }
@@ -147,18 +147,18 @@ public class EntityCakePotion extends EntityThrowable
      */
     protected void onImpactfe(RayTraceResult result)
     {
-        if (!this.worldObj.isRemote)
+        if (!this.world.isRemote)
         {
 
         	
             AxisAlignedBB axisalignedbb = this.getEntityBoundingBox().expand(4.0D, 2.0D, 4.0D);
-            List<EntityLivingBase> list1 = this.worldObj.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, axisalignedbb);
+            List<EntityLivingBase> list1 = this.world.<EntityLivingBase>getEntitiesWithinAABB(EntityLivingBase.class, axisalignedbb);
 
             if (!list1.isEmpty())
             {
                 for (EntityLivingBase entitylivingbase : list1)
                 {
-                    double d0 = this.getDistanceSqToEntity(entitylivingbase);
+                    double d0 = this.getDistanceSq(entitylivingbase);
 
                     if (d0 < 16.0D)
                     {
@@ -199,7 +199,7 @@ public class EntityCakePotion extends EntityThrowable
             }
         }
 
-        this.worldObj.playEvent(2002, new BlockPos(this), Items.POTIONITEM.getDamage(new ItemStack(Items.POTIONITEM, 1, 0)));
+        this.world.playEvent(2002, new BlockPos(this), Items.POTIONITEM.getDamage(new ItemStack(Items.POTIONITEM, 1, 0)));
         this.setDead();
     }
 

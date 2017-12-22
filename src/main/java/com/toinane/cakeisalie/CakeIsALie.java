@@ -1,5 +1,4 @@
-//   Ce mod est créé par Toinane. Merci de ne pas copier tout mon travail :)   [Français]
-//   Made by Toinane. Thank you not to copy all my work :)                     [English]
+//   This mod is created by Toinane. Thank you to not copy all of my work :)
 //
 //   #############    ##########    ###    ###    ##        #####       ###    ##   ##########
 //   #############    ##########    ###    ####   ##      #########     ####   ##   ###
