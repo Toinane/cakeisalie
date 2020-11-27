@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "bites=0": { "model": "cakeisalie:block/chocolate_mousse" },
+		"bites=1": { "model": "cakeisalie:block/chocolate_mousse4" },
+		"bites=2": { "model": "cakeisalie:block/chocolate_mousse" },
+		"bites=3": { "model": "cakeisalie:block/chocolate_mousse" },
+        "bites=4": { "model": "cakeisalie:block/chocolate_mousse" },
+		"bites=5": { "model": "cakeisalie:block/chocolate_mousse" },
+		"bites=6": { "model": "cakeisalie:block/chocolate_mousse" }
+    }
+}

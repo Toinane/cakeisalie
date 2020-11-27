@@ -1,11 +1,11 @@
 {
 	"forge_marker": 1,
 	"textures": {
-        "particle": "cakeisalie:blocks/cookies_cake_side",
-        "bottom": "cakeisalie:blocks/cookies_cake_bottom",
-        "top": "cakeisalie:blocks/cookies_cake_top",
-        "side": "cakeisalie:blocks/cookies_cake_side",
-        "inside": "cakeisalie:blocks/cookies_cake_inside"
+        "particle": "cakeisalie:block/cookies_cake_side",
+        "bottom": "cakeisalie:block/cookies_cake_bottom",
+        "top": "cakeisalie:block/cookies_cake_top",
+        "side": "cakeisalie:block/cookies_cake_side",
+        "inside": "cakeisalie:block/cookies_cake_inside"
     },
 	 "elements": [
         {   "from": [ 5, 0, 1 ],

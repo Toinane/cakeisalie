@@ -1,11 +1,11 @@
 {
 	"forge_marker": 1,
 	"textures": {
-        "particle": "cakeisalie:blocks/sandy_cake",
-        "bottom": "cakeisalie:blocks/sandy_cake",
-        "top": "cakeisalie:blocks/sandy_cake",
-        "side": "cakeisalie:blocks/sandy_cake",
-        "inside": "cakeisalie:blocks/sandy_cake"
+        "particle": "cakeisalie:block/sandy_cake",
+        "bottom": "cakeisalie:block/sandy_cake",
+        "top": "cakeisalie:block/sandy_cake",
+        "side": "cakeisalie:block/sandy_cake",
+        "inside": "cakeisalie:block/sandy_cake"
     },
 	 "elements": [
         {

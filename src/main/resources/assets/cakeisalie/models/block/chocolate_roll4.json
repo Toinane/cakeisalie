@@ -1,10 +1,10 @@
 {
 	"forge_marker": 1,
 	"textures": {
-        "particle": "cakeisalie:blocks/chocolate_roll_side",
-		  "bothside": "cakeisalie:blocks/chocolate_roll_bothside",
-        "side": "cakeisalie:blocks/chocolate_roll_side",
-        "top": "cakeisalie:blocks/chocolate_roll_top"
+        "particle": "cakeisalie:block/chocolate_roll_side",
+		  "bothside": "cakeisalie:block/chocolate_roll_bothside",
+        "side": "cakeisalie:block/chocolate_roll_side",
+        "top": "cakeisalie:block/chocolate_roll_top"
     },
 	 "elements": [
         {

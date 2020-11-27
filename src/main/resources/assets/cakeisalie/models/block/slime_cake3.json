@@ -1,23 +1,70 @@
 {
-	"forge_marker": 1,
-	"textures": {
-        "particle": "cakeisalie:blocks/slime_cake_side",
-        "bottom": "cakeisalie:blocks/slime_cake_bottom",
-        "top": "cakeisalie:blocks/slime_cake_top",
-        "side": "cakeisalie:blocks/slime_cake_side",
-        "inside": "cakeisalie:blocks/slime_cake_inside"
+  "forge_marker": 1,
+  "textures": {
+    "particle": "cakeisalie:block/slime_cake_side",
+    "bottom": "cakeisalie:block/slime_cake_bottom",
+    "top": "cakeisalie:block/slime_cake_top",
+    "side": "cakeisalie:block/slime_cake_side",
+    "inside": "cakeisalie:block/slime_cake_inside"
+  },
+  "elements": [
+    {
+      "from": [7, 0, 1],
+      "to": [15, 8, 15],
+      "faces": {
+        "down": { "texture": "#bottom", "cullface": "down" },
+        "up": { "texture": "#top" },
+        "north": { "texture": "#side" },
+        "south": { "texture": "#side" },
+        "west": { "texture": "#inside" },
+        "east": { "texture": "#side" }
+      }
     },
-	 "elements": [
-        {   "from": [ 7, 0, 1 ],
-            "to": [ 15, 8, 15 ],
-            "faces": {
-                "down":  { "texture": "#bottom", "cullface": "down" },
-                "up":    { "texture": "#top" },
-                "north": { "texture": "#side" },
-                "south": { "texture": "#side" },
-                "west":  { "texture": "#inside" },
-                "east":  { "texture": "#side" }
-            }
-        }
-	]
+    {
+      "from": [7.1, 3, 5],
+      "to": [11, 5, 11],
+      "faces": {
+        "up": { "texture": "#top" },
+        "north": { "texture": "#top" },
+        "south": { "texture": "#top" },
+        "west": { "texture": "#top" },
+        "east": { "texture": "#top" }
+      }
+    },
+    {
+      "from": [7, 0, 1],
+      "to": [15, 3, 15],
+      "faces": {
+        "up": { "texture": "#bottom" }
+      }
+    },
+    {
+      "from": [7, 0, 1],
+      "to": [7, 8, 15],
+      "faces": {
+        "east": { "texture": "#inside" }
+      }
+    },
+    {
+      "from": [15, 0, 1],
+      "to": [15, 8, 15],
+      "faces": {
+        "west": { "texture": "#side" }
+      }
+    },
+    {
+      "from": [15, 0, 15],
+      "to": [7, 8, 15],
+      "faces": {
+        "south": { "texture": "#side" }
+      }
+    },
+    {
+      "from": [7, 0, 1],
+      "to": [15, 8, 1],
+      "faces": {
+        "south": { "texture": "#side" }
+      }
+    }
+  ]
 }

@@ -1,0 +1,32 @@
+{
+    "variants": {
+        "bites=0": [
+           { "model": "cakeisalie:block/muffins1-1" },
+           { "model": "cakeisalie:block/muffins2-1" }
+        ],
+		  "bites=1": [
+           { "model": "cakeisalie:block/muffins1-1" },
+           { "model": "cakeisalie:block/muffins2-1" }
+        ],
+		  "bites=2": [
+           { "model": "cakeisalie:block/muffins1-1" },
+           { "model": "cakeisalie:block/muffins2-1" }
+        ],
+        "bites=3": [
+           { "model": "cakeisalie:block/muffins2-2" },
+           { "model": "cakeisalie:block/muffins1-2" }
+        ],
+		  "bites=4": [
+           { "model": "cakeisalie:block/muffins2-2" },
+           { "model": "cakeisalie:block/muffins1-2" }
+        ],
+		  "bites=5": [
+           { "model": "cakeisalie:block/muffins2-2" },
+           { "model": "cakeisalie:block/muffins1-2" }
+        ],
+        "bites=6": [
+           { "model": "cakeisalie:block/muffins1-3" },
+           { "model": "cakeisalie:block/muffins2-3" }
+        ]
+    }
+}

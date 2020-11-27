@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "bites=0": { "model": "cakeisalie:block/cheese_cake" },
+        "bites=1": { "model": "cakeisalie:block/cheese_cake1" },
+        "bites=2": { "model": "cakeisalie:block/cheese_cake2" },
+        "bites=3": { "model": "cakeisalie:block/cheese_cake3" },
+        "bites=4": { "model": "cakeisalie:block/cheese_cake4" },
+        "bites=5": { "model": "cakeisalie:block/cheese_cake5" },
+        "bites=6": { "model": "cakeisalie:block/cheese_cake6" }
+    }
+}

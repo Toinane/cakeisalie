@@ -1,17 +1,9 @@
-# CakeIsALie Mod v6.0.0 - MC 1.12.2
-CakeIsALie Mod - Minecraft
+# Fabric Example Mod
 
-Releases & informations on website -> https://crea-th.at/p/cakeisalie/
+## Setup
 
-### How to install
-```
-   git clone https://github.com/Toinane/cakeisalie.git
-   cd cakeisalie
-   > download MDK Forge 1.9.4 & unzip it into cakeisalie folder
-   gradlew setupDecompWorkspace
-   gradlew eclipse (or) gradlew genIntellijRuns
-```
+For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
 
-Launch your IDE and set to your folder and you can start your local dev minecraft :)
+## License
 
-Others informations here -> https://mcforge.readthedocs.io/en/latest/gettingstarted/
+This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.

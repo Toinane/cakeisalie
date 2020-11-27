@@ -32,7 +32,7 @@ tile.Carrot_cake.name=Gâteau à la carotte
 tile.Slime_cake.name=Gâteau gluant
 tile.Muffins.name=Muffins
 
-item.Chocolate_cake.name=Gâteau au chocolat
+item.chocolate_cake.name=Gâteau au chocolat
 item.Apple_cake.name=Gâteau aux pommes
 item.Gold_cake.name=Gâteau aux pommes d'Or
 item.Trapped_cake.name=Gâteau piégé
@@ -76,7 +76,7 @@ potion.Nordic_potion=givré
 potion.Creep_potion=Kamikaze !
 potion.Slime_potion=Rebondissement !
 
-itemGroup.cakeTab=CakeIsALie
+itemGroup.cakeisalie.creative_tab=CakeIsALie
 
 achievement.First=Gâteau au chocolat
 achievement.First.desc=Le premier d'une longue liste

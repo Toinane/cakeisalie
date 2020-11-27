@@ -1,8 +1,8 @@
 {
     "forge_marker": 1,
     "textures": {
-        "particle": "cakeisalie:blocks/paris_brest",
-        "0": "cakeisalie:blocks/paris_brest"
+        "particle": "cakeisalie:block/paris_brest",
+        "0": "cakeisalie:block/paris_brest"
     },
     "elements": [
         {

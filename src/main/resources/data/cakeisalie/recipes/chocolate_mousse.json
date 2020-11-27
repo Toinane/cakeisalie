@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["AAA", "BBB"],
+  "key": {
+    "A": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "B": { "item": "minecraft:egg" }
+  },
+  "result": {
+    "item": "cakeisalie:chocolate_mousse",
+    "count": 1
+  }
+}

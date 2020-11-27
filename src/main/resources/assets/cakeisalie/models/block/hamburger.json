@@ -1,8 +1,8 @@
 {
     "forge_marker": 1,
     "textures": {
-      "particle": "cakeisalie:blocks/hamburger",
-        "burger": "cakeisalie:blocks/hamburger"
+      "particle": "cakeisalie:block/hamburger",
+        "burger": "cakeisalie:block/hamburger"
     },
     "elements": [
         {

@@ -1,12 +1,12 @@
 {
     "forge_marker": 1,
     "textures": {
-        "particle": "cakeisalie:blocks/anniversary_cake_side",
-        "bottom": "cakeisalie:blocks/anniversary_cake_bottom",
-        "top": "cakeisalie:blocks/anniversary_cake_top",
-        "side": "cakeisalie:blocks/anniversary_cake_side",
-        "inside": "cakeisalie:blocks/anniversary_cake_inside",
-        "candle": "cakeisalie:blocks/candle"
+        "particle": "cakeisalie:block/anniversary_cake_side",
+        "bottom": "cakeisalie:block/anniversary_cake_bottom",
+        "top": "cakeisalie:block/anniversary_cake_top",
+        "side": "cakeisalie:block/anniversary_cake_side",
+        "inside": "cakeisalie:block/anniversary_cake_inside",
+        "candle": "cakeisalie:block/candle"
     },
     "elements": [
         {   "from": [ 13, 0, 1 ],
