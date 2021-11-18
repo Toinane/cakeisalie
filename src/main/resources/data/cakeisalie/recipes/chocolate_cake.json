@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["AAA", "BBB", "CCC"],
+  "key": {
+    "A": { "item": "minecraft:milk_bucket" },
+    "B": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "C": { "item": "minecraft:wheat" }
+  },
+  "result": {
+    "item": "cakeisalie:chocolate_cake",
+    "count": 1
+  }
+}

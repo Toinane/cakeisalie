@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "cakeisalie",
+  "version": "${version}",
+  "name": "CakeIsALie",
+  "description": "Adds lots of new cakes with amazing effects!",
+  "authors": [
+    {
+      "name": "Toinane",
+      "contact": {
+        "discord": "https://discord.gg/GywXyJh"
+      }
+    }
+  ],
+  "contact": {
+    "homepage": "https://crea-th.at/p/cakeisalie/",
+    "sources": "https://github.com/Toinane/cakeisalie",
+    "issues": "https://github.com/Toinane/cakeisalie/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/cakeisalie/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["toinane.cakeisalie.CakeIsALie"],
+    "client": ["toinane.cakeisalie.client.ClientDispatcher"],
+    "server": []
+  },
+  "mixins": [
+    {
+      "config": "cakeisalie.client.json",
+      "environment": "client"
+    },
+    {
+      "config": "cakeisalie.common.json",
+      "environment": "*"
+    }
+  ],
+  "requires": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*"
+  }
+}

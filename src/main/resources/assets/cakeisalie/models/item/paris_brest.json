@@ -1,7 +1,6 @@
 {
-   "forge_marker": 1,
    "parent": "item/generated",
     "textures": {
-        "layer0": "cakeisalie:items/paris_brest"
+        "layer0": "cakeisalie:item/paris_brest"
     }
 }

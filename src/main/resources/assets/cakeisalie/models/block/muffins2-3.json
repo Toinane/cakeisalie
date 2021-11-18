@@ -1,8 +1,8 @@
 {
     "forge_marker": 1,
     "textures": {
-      "particle": "cakeisalie:blocks/muffins",
-       "all": "cakeisalie:blocks/muffins"
+      "particle": "cakeisalie:block/muffins",
+       "all": "cakeisalie:block/muffins"
     },
     "elements": [
         {

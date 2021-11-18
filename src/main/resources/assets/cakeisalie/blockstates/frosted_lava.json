@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "cakeisalie:block/frosted_lava"
+    },
+    "age=1": {
+      "model": "cakeisalie:block/frosted_lava1"
+    },
+    "age=2": {
+      "model": "cakeisalie:block/frosted_lava2"
+    },
+    "age=3": {
+      "model": "cakeisalie:block/frosted_lava3"
+    }
+  }
+}

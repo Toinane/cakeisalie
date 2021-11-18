@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "bites=0": { "model": "cakeisalie:block/anniversary_cake" },
+		"bites=1": { "model": "cakeisalie:block/anniversary_cake2" },
+        "bites=2": { "model": "cakeisalie:block/anniversary_cake4" },
+		"bites=3": { "model": "cakeisalie:block/anniversary_cake6" },
+        "bites=4": { "model": "cakeisalie:block/anniversary_cake" },
+		"bites=5": { "model": "cakeisalie:block/anniversary_cake" },
+        "bites=6": { "model": "cakeisalie:block/anniversary_cake" }
+    }
+}

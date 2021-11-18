@@ -1,0 +1,24 @@
+{
+  "forge_marker": 1,
+  "textures": {
+    "particle": "cakeisalie:block/khobzet_biscuit_side",
+    "bottom": "cakeisalie:block/khobzet_biscuit_bottom",
+    "top": "cakeisalie:block/khobzet_biscuit_top",
+    "side": "cakeisalie:block/khobzet_biscuit_side",
+    "inside": "cakeisalie:block/khobzet_biscuit_side"
+  },
+  "elements": [
+    {
+      "from": [7, 0, 1],
+      "to": [15, 4, 15],
+      "faces": {
+        "down": { "texture": "#bottom", "cullface": "down" },
+        "up": { "texture": "#top" },
+        "north": { "texture": "#side" },
+        "south": { "texture": "#side" },
+        "west": { "texture": "#inside" },
+        "east": { "texture": "#side" }
+      }
+    }
+  ]
+}

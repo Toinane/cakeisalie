@@ -1,11 +1,11 @@
 {
 	"forge_marker": 1,
 	"textures": {
-        "particle": "cakeisalie:blocks/redstone_cake_side",
-        "bottom": "cakeisalie:blocks/redstone_cake_bottom",
-        "top": "cakeisalie:blocks/redstone_cake_top",
-        "side": "cakeisalie:blocks/redstone_cake_side",
-        "inside": "cakeisalie:blocks/redstone_cake_inside"
+        "particle": "cakeisalie:block/redstone_cake_side",
+        "bottom": "cakeisalie:block/redstone_cake_bottom",
+        "top": "cakeisalie:block/redstone_cake_top",
+        "side": "cakeisalie:block/redstone_cake_side",
+        "inside": "cakeisalie:block/redstone_cake_inside"
     },
 	 "elements": [
         {   "from": [ 13, 0, 1 ],

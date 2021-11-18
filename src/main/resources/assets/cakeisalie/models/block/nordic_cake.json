@@ -1,8 +1,8 @@
 {
     "forge_marker": 1,
     "textures": {
-        "particle": "cakeisalie:blocks/nordic_cake",
-        "cake": "cakeisalie:blocks/nordic_cake"
+        "particle": "cakeisalie:block/nordic_cake",
+        "cake": "cakeisalie:block/nordic_cake"
     },
     "elements": [
         {

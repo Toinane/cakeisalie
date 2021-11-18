@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "bites=0": { "model": "cakeisalie:block/paris_brest" },
+        "bites=1": { "model": "cakeisalie:block/paris_brest2" },
+        "bites=2": { "model": "cakeisalie:block/paris_brest3" },
+        "bites=3": { "model": "cakeisalie:block/paris_brest" },
+        "bites=4": { "model": "cakeisalie:block/paris_brest" },
+        "bites=5": { "model": "cakeisalie:block/paris_brest" },
+        "bites=6": { "model": "cakeisalie:block/paris_brest" }
+    }
+}
